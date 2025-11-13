@@ -17,7 +17,7 @@ export enum YdBtnStyle {
   selector: 'yd-button',
   imports: [ NgClass ],
   templateUrl: './yd-button.html',
-  styleUrl: '../../styles/index.design-system.scss',
+  styleUrl: '../../styles/classes/yd-button.scss',
   host:{
     '[class.pointer-events--none]':'disabled()',
     '[class.w--100]':'fullSize()',

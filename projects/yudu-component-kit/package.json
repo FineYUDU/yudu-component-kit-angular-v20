@@ -1,6 +1,21 @@
 {
   "name": "yudu-component-kit",
-  "version": "0.0.1",
+  "version": "0.0.7",
+  "license":"MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FineYUDU/YuduComponentKit"
+  },
+  "keywords": ["fineYudu","yudu","ui","YuduComponentKit","ComponentKit"],
+  "author": {
+    "name": "Fine Yudu",
+     "email": "fine_567@hotmail.com",
+     "url": "https://github.com/FineYUDU"
+  },
+  "bugs": {
+    "url":"https://github.com/FineYUDU/YuduComponentKit/issues"
+  },
+  "homepage": "https://fine-ssr.netlify.app/fine-the-wizard/about",
   "peerDependencies": {
     "@angular/common": "^20.3.0",
     "@angular/core": "^20.3.0"

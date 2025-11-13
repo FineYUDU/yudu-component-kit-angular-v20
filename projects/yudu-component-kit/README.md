@@ -1,63 +1,78 @@
+<!-- ![Logo Fine Dev](./projects/yudu-component-kit/assets/logo-fine-dev.png-->
 # YuduComponentKit
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.0.
+## ⚠️ **This library is currently under construction.**
 
-## Code scaffolding
+- Some features, components, and styles may change in future versions.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## 🚀 Features
+- ⚡ Built for Angular **v20+**
+- 🧱 Atomic and modular architecture
+- 🌗 Supports **Dark / Light** themes
+- 🧩 Reusable UI components (Buttons, Cards, Modals, etc.)
+- 🧪 100% compatible with **Angular CLI**, **Standalone Components**, and **SSR**
 
-```bash
-ng generate component component-name
-```
+## Components status
+- Button ✅
+- Header 👷🏾
+- Footer 👷🏾
+- Sidebar 👷🏾
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the library, run:
-
-```bash
-ng build yudu-component-kit
-```
-
-This command will compile your project, and the build artifacts will be placed in the `dist/` directory.
-
-### Publishing the Library
-
-Once the project is built, you can publish your library by following these steps:
-
-1. Navigate to the `dist` directory:
-   ```bash
-   cd dist/yudu-component-kit
-   ```
-
-2. Run the `npm publish` command to publish your library to the npm registry:
-   ```bash
-   npm publish
-   ```
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+## 📦 Installation
 
 ```bash
-ng test
+npm i yudu-component-kit
 ```
 
-## Running end-to-end tests
 
-For end-to-end (e2e) testing, run:
+## ⚠️ Important
+Before using the UI components, you must initialize the theme service.
+This library includes a service called `LocalStorageStore` that:
 
-```bash
-ng e2e
+- creates the `theme` key in `localStorage` (default: `dark`)
+- applies the corresponding CSS classes (`theme--dark` / `theme--light`) to the `<body>`
+
+This initialization does not happen automatically. You need to inject the service at least once, preferably in your root component.
+
+```ts
+// app.component.ts (standalone)
+import { Component, inject } from '@angular/core';
+import { LocalStorageStore } from 'yudu-component-kit';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+})
+export class AppComponent {
+  // injecting the service will run its constructor and apply the theme classes
+  private readonly localStorageStore = inject(LocalStorageStore);
+}
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+Important: if you don’t inject the service, the theme classes won’t be applied and the global styles may not look as expected.
 
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## ✍🏾 Register styles
+YuduComponentKit ships a design-system stylesheet with tokens (CSS variables), base rules, and theme selectors. You must include it in your app.
+```ts
+{
+  "projects": {
+    "tu-app": {
+      "architect": {
+        "build": {
+          "options": {
+            "styles": [
+              "src/styles.css",
+              "node_modules/yudu-component-kit/src/lib/styles/index.design-system.scss"
+            ]
+          }
+        }
+      }
+    }
+  }
+}
+```
+---
+<p align="center">
+Made with ❤️ by "Fine Yudu"
+This project using Angular CLI version 20.3.8
+</p>
