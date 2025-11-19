@@ -1,17 +1,8 @@
 import { NgClass } from '@angular/common';
-import { Component, input, ViewEncapsulation } from '@angular/core';
+import { booleanAttribute, Component, input, ViewEncapsulation } from '@angular/core';
 
-export enum YdBtnSize {
-  small = 'small',
-  normal = 'normal',
-  large = 'large',
-};
-
-export enum YdBtnStyle {
-  primary = 'primary',
-  secondary = 'secondary',
-  tertiary = 'tertiary',
-};
+export type YdBtnSize = 'small' | 'normal' | 'large';
+export type YdBtnStyle = 'primary' | 'secondary' | 'tertiary';
 
 @Component({
   selector: 'yd-button',
@@ -26,18 +17,12 @@ export enum YdBtnStyle {
   encapsulation:ViewEncapsulation.None
 })
 export class YdButton {
-  public size = input.required<YdBtnSize>();
-  public buttonStyle = input.required<YdBtnStyle>();
+  public size = input<YdBtnSize>('normal');
+  public buttonStyle = input<YdBtnStyle>('primary');
   public type = input<string>('text');
   
-  public disabled = input(false, {
-    transform:(value:boolean | string) => 
-      typeof value === 'string' ? value === '' : value
-  });
+  public disabled = input(false,{ transform: booleanAttribute });
   
-  public fullSize = input(false, {
-    transform:(value:boolean | string) => 
-      typeof value === 'string' ? value === '' : value
-  });
+  public fullSize = input(false, { transform: booleanAttribute });
 
 }

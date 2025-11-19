@@ -56,7 +56,7 @@ YuduComponentKit ships a design-system stylesheet with tokens (CSS variables), b
 ```ts
 {
   "projects": {
-    "tu-app": {
+    "my-app": {
       "architect": {
         "build": {
           "options": {
