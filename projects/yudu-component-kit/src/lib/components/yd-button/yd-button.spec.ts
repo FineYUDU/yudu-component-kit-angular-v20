@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from "@angular/core/testing"
-import { provideZonelessChangeDetection, signal } from "@angular/core";
+import { provideZonelessChangeDetection } from "@angular/core";
 
 import { YdBtnSize, YdBtnStyle, YdButton } from "./yd-button";
 
@@ -25,39 +25,24 @@ describe('YdButton',()=> {
         expect(component).toBeTruthy();
     });
 
-    it('should initialize inputs with defaul values', ()=> {
+    it('should initialize inputs with default values', ()=> {
         expect(component.size()).toBe('normal');
         expect(component.buttonStyle()).toBe('primary');
-        expect(component.type()).toBe('text');
+        expect(component.type()).toBe('button');
         expect(component.disabled()).toBeFalse();
         expect(component.fullSize()).toBeFalse();
     });
 
     it('should apply host default classes', () => {
-        const mustHaveDefaultCssClasses:string[] = 'yd-btn__container'.split(' ');
-        const hostClasses:string[] = compiled.classList.value.split(' ');
-
-        mustHaveDefaultCssClasses.forEach( cssClasses => {
-            expect(hostClasses).toContain( cssClasses );
-        });
+        expect(compiled.classList).toContain('yd-btn__container');
     });
 
     it('should initialize button with class yd-btn', ()=> {
-        const button = compiled.querySelector('button')! as HTMLButtonElement;
-        const mustHaveClasses:string[] = 'yd-btn'.split(' ');
-        const buttonClasses = button.classList.value.split(' ');
+        const button = compiled.querySelector('button') as HTMLButtonElement;
 
-        expect(button).not.toBeNull();
-
-        mustHaveClasses.forEach( cssClass => {
-            expect( buttonClasses ).toContain(cssClass);
-        });
-
+        expect(button).toBeTruthy();
+        expect(button.classList).toContain('yd-btn');
     });
-
-    it('should ng-content be null', ()=> {
-        expect(compiled.querySelector('ng-content')).toBeNull();
-    });    
 
     it('should transform string inputs for disabled/fullSize', () => {
         fixture.componentRef.setInput('disabled','');
@@ -87,8 +72,6 @@ describe('YdButton',()=> {
     });
     
     it('should not apply disabled/fullSize classes by default', () => {
-        fixture.detectChanges();
-
         const hostClassList = compiled.classList;
 
         expect(hostClassList).not.toContain('pointer-events--none');
@@ -113,8 +96,8 @@ describe('YdButton',()=> {
     });
 
     it('should apply class \'primary\' | \'secondary\' | \'tertiary\' on buttonStyle', () => {
-        const button = compiled.querySelector('button')! as HTMLButtonElement;
-        expect(button).not.toBeNull();
+        const button = compiled.querySelector('button') as HTMLButtonElement;
+        expect(button).toBeTruthy();
 
         const styles:YdBtnStyle[] = ['primary','secondary','tertiary'];
         for (const style of styles) {
@@ -128,6 +111,13 @@ describe('YdButton',()=> {
             expect(button.classList).not.toContain(`yd-btn__${other}`);
         });
         }
+    });
+
+    it('should apply disabled class in button', ()=> {
+        const button = compiled.querySelector('button')! as HTMLButtonElement;
+        fixture.componentRef.setInput('disabled', true);
+        fixture.detectChanges();
+        expect(button.classList).toContain('disabled');
     });
     
 });

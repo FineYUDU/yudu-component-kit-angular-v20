@@ -3,10 +3,12 @@ import { booleanAttribute, Component, input, ViewEncapsulation } from '@angular/
 
 export type YdBtnSize = 'small' | 'normal' | 'large';
 export type YdBtnStyle = 'primary' | 'secondary' | 'tertiary';
+export type YdBtnType = 'button' | 'submit' | 'reset';
 
 @Component({
   selector: 'yd-button',
   imports: [ NgClass ],
+  standalone:true,
   templateUrl: './yd-button.html',
   styleUrl: '../../styles/classes/yd-button.scss',
   host:{
@@ -19,7 +21,7 @@ export type YdBtnStyle = 'primary' | 'secondary' | 'tertiary';
 export class YdButton {
   public size = input<YdBtnSize>('normal');
   public buttonStyle = input<YdBtnStyle>('primary');
-  public type = input<string>('text');
+  public type = input<YdBtnType>('button');
   
   public disabled = input(false,{ transform: booleanAttribute });
   

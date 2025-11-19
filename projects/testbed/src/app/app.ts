@@ -13,5 +13,5 @@ import { YdButton, YdBtnSize, YdBtnStyle } from 'yudu-component-kit';
 export class App {
   protected readonly title = signal('testbed');
   public btnSize = signal<YdBtnSize>('large');
-  public btnStyle = signal<YdBtnStyle>('secondary');
+  public btnStyle = signal<YdBtnStyle>('primary');
 }
