@@ -1,21 +1,14 @@
 import { NgClass } from '@angular/common';
-import { Component, input, ViewEncapsulation } from '@angular/core';
+import { booleanAttribute, Component, input, ViewEncapsulation } from '@angular/core';
 
-export enum YdBtnSize {
-  small = 'small',
-  normal = 'normal',
-  large = 'large',
-};
-
-export enum YdBtnStyle {
-  primary = 'primary',
-  secondary = 'secondary',
-  tertiary = 'tertiary',
-};
+export type YdBtnSize = 'small' | 'normal' | 'large';
+export type YdBtnStyle = 'primary' | 'secondary' | 'tertiary';
+export type YdBtnType = 'button' | 'submit' | 'reset';
 
 @Component({
   selector: 'yd-button',
   imports: [ NgClass ],
+  standalone:true,
   templateUrl: './yd-button.html',
   styleUrl: '../../styles/classes/yd-button.scss',
   host:{
@@ -26,18 +19,12 @@ export enum YdBtnStyle {
   encapsulation:ViewEncapsulation.None
 })
 export class YdButton {
-  public size = input.required<YdBtnSize>();
-  public buttonStyle = input.required<YdBtnStyle>();
-  public type = input<string>('text');
+  public size = input<YdBtnSize>('normal');
+  public buttonStyle = input<YdBtnStyle>('primary');
+  public type = input<YdBtnType>('button');
   
-  public disabled = input(false, {
-    transform:(value:boolean | string) => 
-      typeof value === 'string' ? value === '' : value
-  });
+  public disabled = input(false,{ transform: booleanAttribute });
   
-  public fullSize = input(false, {
-    transform:(value:boolean | string) => 
-      typeof value === 'string' ? value === '' : value
-  });
+  public fullSize = input(false, { transform: booleanAttribute });
 
 }
