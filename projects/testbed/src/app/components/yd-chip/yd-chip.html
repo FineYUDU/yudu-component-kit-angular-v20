@@ -1,0 +1,12 @@
+@for (chip of chipsList(); track $index) {
+    @if(!chip.route) {
+        <span class="yd-chip__body">
+            {{chip.label}}
+        </span>
+    }
+    @else {
+        <a class="yd-chip__body" [routerLink]="chip.route">
+            {{chip.label}}
+        </a>
+    }
+}
