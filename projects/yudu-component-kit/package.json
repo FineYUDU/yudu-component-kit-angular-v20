@@ -18,7 +18,8 @@
   "homepage": "https://fine-ssr.netlify.app/fine-the-wizard/about",
   "peerDependencies": {
     "@angular/common": "^20.3.0",
-    "@angular/core": "^20.3.0"
+    "@angular/core": "^20.3.0",
+    "primeicons": "^7.0.0"
   },
   "dependencies": {
     "tslib": "^2.3.0"

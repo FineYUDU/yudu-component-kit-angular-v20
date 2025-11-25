@@ -1,11 +1,11 @@
 import { Component, signal } from '@angular/core';
 
-import { YdChip } from "./components/yd-chip/yd-chip";
+import { YdIcon } from "./components/yd-icon/yd-icon";
 
 @Component({
   selector: 'app-root',
   imports: [
-    YdChip
+    YdIcon
 ],
   templateUrl: './app.html',
   styleUrl: './app.css'
