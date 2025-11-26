@@ -1,15 +1,13 @@
 import { Component, computed, input } from '@angular/core';
 import { NgClass } from '@angular/common';
 
-import { YdIconName, YdIconSize } from '../../interfaces/yd-icon.types';
-
+import { YdIconName, YdIconSize } from '../../interfaces/yd-icon-types';
 import { YD_ICON_PRIME_MAP } from '../../interfaces/yd-icon.adapter';
 
 @Component({
   selector: 'yd-icon',
   imports: [NgClass],
   templateUrl: './yd-icon.html',
-  
 })
 export class YdIcon {
   public size = input<YdIconSize | `${number}${'px' | 'rem'}`>('normal');

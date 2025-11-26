@@ -18,6 +18,7 @@ describe('YdIcon', () => {
     component = fixture.componentInstance;
     compiled = fixture.nativeElement as HTMLElement;
 
+    fixture.componentRef.setInput('name', 'check');
     fixture.detectChanges();
   });
 
@@ -27,7 +28,7 @@ describe('YdIcon', () => {
 
   it('should initialize inputs with default values', ()=> {
     expect(component.color()).toBe('var(--yd-chip-color-primary-text-default)');
-    expect(component.name()).toBeNull();
+    expect(component.name()).toBe('check');
     expect(component.size()).toBe('normal');
   });
 
