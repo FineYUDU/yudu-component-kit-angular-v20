@@ -8,7 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "lint": "ng lint",
     "test": "ng test",
-    "yudu:test": "ng test yudu-component-kit --watch=false --progress=false --browsers=ChromeHeadless",
+    "yudu:test": "ng test yudu-component-kit",
     "yudu:test:coverage": "ng test yudu-component-kit --code-coverage",
     "yudu:testbed": "ng serve testbed",
     "yudu:build": "npm run yudu:test && ng build yudu-component-kit",

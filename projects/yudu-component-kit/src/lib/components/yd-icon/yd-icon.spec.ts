@@ -32,4 +32,20 @@ describe('YdIcon', () => {
     expect(component.size()).toBe('normal');
   });
 
+  it('should fallback to "pi-question" and log a warning if name is not mapped', () => {
+    const invalidName = 'invalid-icon' as any;
+
+    const warnSpy = spyOn(console, 'warn');
+
+    fixture.componentRef.setInput('name', invalidName);
+    fixture.detectChanges();
+
+    expect(component.nameComputed()).toBe('pi-question');
+
+    expect(warnSpy).toHaveBeenCalledWith(
+      `[YuduComponentKit] Icon "${invalidName}" is not mapped. Using "question".`
+    );
+  });
+
+
 });
