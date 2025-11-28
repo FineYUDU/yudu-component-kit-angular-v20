@@ -53,6 +53,7 @@ Important: if you don’t inject the service, the theme classes won’t be appli
 
 ## ✍🏾 Register styles
 YuduComponentKit ships a design-system stylesheet with tokens (CSS variables), base rules, and theme selectors. You must include it in your app.
+```angular.json```
 ```ts
 {
   "projects": {
