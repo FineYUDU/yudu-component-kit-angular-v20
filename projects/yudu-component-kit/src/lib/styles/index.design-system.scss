@@ -1,4 +1,3 @@
-@import "primeicons/primeicons.css";
 // Core
 @use './tokens/index_tokens';
 @use './variables/index_variables';
@@ -6,3 +5,5 @@
 @use './themes/index_themes';
 // Classes
 @use './classes/index_classes';
+// Prime icons
+@import "primeicons/primeicons.css";
