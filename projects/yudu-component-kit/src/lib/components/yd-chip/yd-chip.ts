@@ -1,9 +1,10 @@
 import { Component, input } from '@angular/core';
 import { RouterLink } from "@angular/router";
 
-import { YdIcon, YdIconName } from "yudu-component-kit";
+import { YdChipSize, YdIconName } from '../../interfaces/index';
 
-import { YdChipSize } from '../../interfaces/yd-chip.interfaces';
+import { YdIcon } from "../yd-icon/yd-icon";
+
 @Component({
   selector: 'yd-chip',
   imports: [RouterLink, YdIcon],

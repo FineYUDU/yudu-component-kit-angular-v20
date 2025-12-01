@@ -6,4 +6,8 @@ export * from './lib/core/services/local-storage-store';
 export * from './lib/core/services/theme';
 // Components
 export * from './lib/components/yd-button/yd-button';
+export * from './lib/components/yd-chip/yd-chip';
 export * from './lib/components/yd-icon/yd-icon';
+// Interfaces & Types
+export * from './lib/interfaces/index';
+
