@@ -1,5 +1,14 @@
-<!-- ![Logo Fine Dev](./projects/yudu-component-kit/assets/logo-fine-dev.png-->
-# YuduComponentKit
+<p align="center">
+  <img
+    src="./projects/yudu-component-kit/assets/logo-fine-dev.png"
+    alt="Logo Fine Dev"
+    width="250"
+    style="border-radius: 50%;"
+  />
+</p>
+<h1 align="center">
+  YuduComponentKit
+</h1>
 
 ## ⚠️ **This library is currently under construction.**
 
@@ -14,6 +23,7 @@
 
 ## Components status
 - Button ✅
+- Chip 👷🏾
 - Header 👷🏾
 - Footer 👷🏾
 - Sidebar 👷🏾
