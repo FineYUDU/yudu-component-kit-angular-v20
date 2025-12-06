@@ -3,7 +3,7 @@
     src="./projects/yudu-component-kit/assets/logo-fine-dev.png"
     alt="Logo Fine Dev"
     width="250"
-    style="border-radius: 50%;"
+    style="border-radius: 100%;"
   />
 </p>
 <h1 align="center">
@@ -13,6 +13,14 @@
 ## ⚠️ **This library is currently under construction.**
 
 - Some features, components, and styles may change in future versions.
+
+
+## Table of content
+- [Features](#features)
+- [Components status](#component-status)
+- [Installation](#installation)
+- [Important](#Important)
+- [Register styles](#register-styles)
 
 ## 🚀 Features
 - ⚡ Built for Angular **v20+**
