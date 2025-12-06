@@ -1,17 +1,14 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject } from '@angular/core';
 
-import { YdButton, YdBtnSize, YdBtnStyle } from 'yudu-component-kit';
+import { LocalStorageStore } from 'yudu-component-kit';
 
+import { Main } from "./views/main/main";
 @Component({
   selector: 'app-root',
-  imports: [
-    YdButton
-],
+  imports: [Main],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
-  protected readonly title = signal('testbed');
-  public btnSize = signal<YdBtnSize>('large');
-  public btnStyle = signal<YdBtnStyle>('secondary');
+  private localStorageStore = inject( LocalStorageStore );
 }

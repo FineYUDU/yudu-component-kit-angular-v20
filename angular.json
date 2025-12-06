@@ -48,7 +48,8 @@
               }
             ],
             "styles": [
-              "projects/testbed/src/styles.css"
+              "projects/testbed/src/styles.css",
+              "node_modules/yudu-component-kit/src/lib/styles/index.design-system.scss"
             ]
           },
           "configurations": {

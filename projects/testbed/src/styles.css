@@ -1,2 +1,32 @@
-/* @import 'yudu-component-kit/styles/index.design-system'; */
-@import '../src/styles/index.design-system.scss';
+.yd-chip__container {
+    display: flex;
+    width: fit-content;
+    height: fit-content;
+    
+    a {
+        display: flex;
+        align-items: center;
+        gap: var(--spacing-xs);
+        border-radius: var(--radius-full);
+        color: var(--yd-chip-color-primary-text-default);
+        white-space: nowrap;
+        padding: var(--spacing-xs) var(--spacing-sm);
+        border: var(--border-xs) solid var(--yd-chip-color-surface-primary);
+        background-color: var(--yd-chip-color-surface-secondary);
+        
+        &.small {
+            font-size: var(--font-size-b2);
+        }
+        &.normal {
+            font-size: var(--font-size-b1);
+        }
+        &.large {
+            font-size: var(--font-size-h5);
+        }
+        &:hover {
+            background-color: var(--yd-chip-color-surface-primary);
+            border: var(--border-xs) solid transparent;
+        }
+    }
+    
+}

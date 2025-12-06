@@ -1,9 +1,26 @@
-<!-- ![Logo Fine Dev](./projects/yudu-component-kit/assets/logo-fine-dev.png-->
-# YuduComponentKit
+<p align="center">
+  <img
+    src="./projects/yudu-component-kit/assets/logo-fine-dev.png"
+    alt="Logo Fine Dev"
+    width="250"
+    style="border-radius: 100%;"
+  />
+</p>
+<h1 align="center">
+  YuduComponentKit
+</h1>
 
 ## ⚠️ **This library is currently under construction.**
 
 - Some features, components, and styles may change in future versions.
+
+
+## Table of content
+- [Features](#features)
+- [Components status](#component-status)
+- [Installation](#installation)
+- [Important](#Important)
+- [Register styles](#register-styles)
 
 ## 🚀 Features
 - ⚡ Built for Angular **v20+**
@@ -14,6 +31,7 @@
 
 ## Components status
 - Button ✅
+- Chip 👷🏾
 - Header 👷🏾
 - Footer 👷🏾
 - Sidebar 👷🏾
@@ -53,6 +71,7 @@ Important: if you don’t inject the service, the theme classes won’t be appli
 
 ## ✍🏾 Register styles
 YuduComponentKit ships a design-system stylesheet with tokens (CSS variables), base rules, and theme selectors. You must include it in your app.
+```angular.json```
 ```ts
 {
   "projects": {
