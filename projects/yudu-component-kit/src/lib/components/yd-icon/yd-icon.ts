@@ -29,11 +29,11 @@ export class YdIcon {
   public sizeComputed = computed<string>(()=> {
     const size = this.size();
     const sizeTransform = size === 'small' 
-      ? '.8rem'
+      ? '.6rem'
       : size === 'normal'
-      ? '1rem'
+      ? '.8rem'
       : size === 'large'
-      ? '1.5rem'
+      ? '1rem'
       : size;
     return sizeTransform;
   });
