@@ -10,40 +10,50 @@
   YuduComponentKit
 </h1>
 
-## ⚠️ **This library is currently under construction.**
+![last update](https://img.shields.io/github/last-commit/FineYUDU/yudu-component-kit?label=last%20update)
 
+## ⚠️ **This library is currently under construction.**
 - Some features, components, and styles may change in future versions.
 
 
-## Table of content
-- [Features](#features)
-- [Components status](#component-status)
-- [Installation](#installation)
-- [Important](#Important)
-- [Register styles](#register-styles)
 
-## 🚀 Features
+## Table of contents
+- [Features](#features)
+- [Components list](#components-list)
+- [Status](#status)
+- [Quick start](#quick-start)
+
+## Features
 - ⚡ Built for Angular **v20+**
 - 🧱 Atomic and modular architecture
 - 🌗 Supports **Dark / Light** themes
 - 🧩 Reusable UI components (Buttons, Cards, Modals, etc.)
 - 🧪 100% compatible with **Angular CLI**, **Standalone Components**, and **SSR**
 
-## Components status
+## Components list
 - Button ✅
-- Chip 👷🏾
+- Chip ✅
+- Icons ✅
+- Input 👷🏾
 - Header 👷🏾
 - Footer 👷🏾
 - Sidebar 👷🏾
 
-## 📦 Installation
+## Status
+<!-- ![Vitest](https://img.shields.io/badge/testing-Vitest-blue) -->
+![Angular](https://img.shields.io/badge/Angular-v20%2B-red)
+![npm](https://img.shields.io/npm/v/yudu-component-kit)
+![Karma](https://img.shields.io/badge/testing-Karma-blueviolet)
+![coverage](https://img.shields.io/badge/coverage-78.4%25-yellow)
+![License](https://img.shields.io/badge/license-MIT-green)
 
+## Quick start
+Install with npm:
 ```bash
 npm i yudu-component-kit
 ```
 
-
-## ⚠️ Important
+### Configuration
 Before using the UI components, you must initialize the theme service.
 This library includes a service called `LocalStorageStore` that:
 
@@ -69,10 +79,9 @@ export class AppComponent {
 
 Important: if you don’t inject the service, the theme classes won’t be applied and the global styles may not look as expected.
 
-## ✍🏾 Register styles
 YuduComponentKit ships a design-system stylesheet with tokens (CSS variables), base rules, and theme selectors. You must include it in your app.
-```angular.json```
-```ts
+```angular.json``` this line: ```"node_modules/yudu-component-kit/src/lib/styles/index.design-system.scss"```
+```json
 {
   "projects": {
     "my-app": {
@@ -92,6 +101,6 @@ YuduComponentKit ships a design-system stylesheet with tokens (CSS variables), b
 ```
 ---
 <p align="center">
-Made with ❤️ by "Fine Yudu"
-This project using Angular CLI version 20.3.8
+  Made with ❤️ by "Fine Yudu" 2025<br/>
+  This project uses Angular CLI version 20.3.8
 </p>
