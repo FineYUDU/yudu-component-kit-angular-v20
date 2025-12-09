@@ -1,6 +1,6 @@
 <p align="center">
   <img
-    src="./assets/logo.svg"
+    src="./projects/yudu-component-kit/assets/logo.svg"
     alt="Logo Fine Dev"
     width="250"
   />
