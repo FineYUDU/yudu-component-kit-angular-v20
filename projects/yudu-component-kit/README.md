@@ -1,9 +1,8 @@
 <p align="center">
   <img
-    src="./projects/yudu-component-kit/assets/logo-fine-dev.png"
+    src="./assets/logo.svg"
     alt="Logo Fine Dev"
     width="250"
-    style="border-radius: 100%;"
   />
 </p>
 <h1 align="center">
