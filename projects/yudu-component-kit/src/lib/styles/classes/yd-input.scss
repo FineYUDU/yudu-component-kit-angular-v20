@@ -1,5 +1,3 @@
-@import url('../../yudu-component-kit/src/lib/styles/index.design-system.scss');
-
 .yd-input__container {
     display: flex;
     flex-direction: column;
@@ -16,7 +14,7 @@
             height: 100%;
         }
         
-        input {
+        .yd-input__body {
             outline: transparent;
             padding: var(--spacing-xs);
             border-radius: var(--radius-minimal);

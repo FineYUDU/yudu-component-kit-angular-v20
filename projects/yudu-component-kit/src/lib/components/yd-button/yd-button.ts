@@ -10,7 +10,6 @@ export type YdBtnType = 'button' | 'submit' | 'reset';
   imports: [ NgClass ],
   standalone:true,
   templateUrl: './yd-button.html',
-  styleUrl: '../../styles/classes/yd-button.scss',
   host:{
     '[class.pointer-events--none]':'disabled()',
     '[class.w--100]':'fullSize()',

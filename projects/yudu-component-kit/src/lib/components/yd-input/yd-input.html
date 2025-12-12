@@ -8,6 +8,7 @@
         </div>
     }
     <input 
+        class="yd-input__body"
         [class.input__disabled]="isDisabled()"
         [class.w--100]="fullSize()"
         [class.input__error]="hasError()"
@@ -19,7 +20,7 @@
         (input)="handleInput($event)"
         (blur)="handleBlur()"
         [attr.maxlength]="maxLength()"
-        [disabled]="isDisabledStatie()"
+        [disabled]="isDisabledState()"
     >
 </div>
 @if(hasError()) {

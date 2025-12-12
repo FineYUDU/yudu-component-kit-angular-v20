@@ -1,8 +1,8 @@
 import { Component, forwardRef, input, signal, booleanAttribute } from '@angular/core';
 import { ControlValueAccessor, ReactiveFormsModule, NG_VALUE_ACCESSOR } from '@angular/forms';
 
-import { YdIconName } from 'yudu-component-kit';
-import { YdIcon } from "yudu-component-kit";
+import { YdIconName } from '../../interfaces/yd-icon-types';
+import { YdIcon } from "../yd-icon/yd-icon";
 
 export type InputType = 'text' | 'email' | 'password' | 'number' | 'date';
 
@@ -37,13 +37,13 @@ export class YdInput implements ControlValueAccessor{
   public isDisabled = input(false, { transform: booleanAttribute });
 
   public value = signal<string>(''); 
-  public isDisabledStatie = signal<boolean>(false);
+  public isDisabledState = signal<boolean>(false);
 
   private _onChangeCb: (value: string | null) => void = () => {};
   private onTouchedCb: () => void = () => {};
 
   public handleInput(event: Event): void {
-    if (this.isDisabledStatie()) return;
+    if (this.isDisabledState()) return;
 
     const input = event.target as HTMLInputElement;
     this.value.set(input.value);
@@ -66,7 +66,7 @@ export class YdInput implements ControlValueAccessor{
     this.onTouchedCb = fn;
   }
 
-  public setDisabledState(isDisabledStatie: boolean): void {
-    this.isDisabledStatie.set(isDisabledStatie);
+  public setDisabledState(isDisabledState: boolean): void {
+    this.isDisabledState.set(isDisabledState);
   }
 }

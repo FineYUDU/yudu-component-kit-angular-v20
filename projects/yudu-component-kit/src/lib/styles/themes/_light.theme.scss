@@ -67,6 +67,21 @@
     --yd-color-border-success-secondary                         :#{$success-100};
     --yd-color-border-success-tertiary                          :#{$success-50};
     --yd-color-border-success-quaternary                        :#{$success-0};
+    // <------- Input -------->
+    --yd-input-color-border-default                             :#{$grey-400};
+    --yd-input-color-surface-default                            :#{$grey-700};
+    --yd-input-color-text-default                               :#{$grey-600};
+
+    --yd-input-color-surface-hover                              :#{$grey-100};
+
+    --yd-input-color-border-focus                               :#{$blue-400};
+
+    --yd-input-color-border-error                               :#{$danger-400};
+    --yd-input-color-text-error                                 :#{$danger-400};
+
+    --yd-input-color-text-disabled                              :#{$grey-100};
+    --yd-input-color-border-disabled                            :#{$grey-100};
+    --yd-input-color-surface-disabled                           :#{$grey-50};
     // <------- Chips -------->
     --yd-chip-color-surface-primary                             :#{$grey-100};
     --yd-chip-color-primary-text-default                        :#{$grey-700};
