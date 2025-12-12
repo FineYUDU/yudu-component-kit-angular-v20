@@ -4,6 +4,10 @@
     width: fit-content;
     gap: var(--spacing-xs);
 
+    &.w--100 {
+        width: 100%;
+    }
+
     .field__container {
         position: relative;
         .field__icon {
