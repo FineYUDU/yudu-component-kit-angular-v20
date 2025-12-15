@@ -1,12 +1,12 @@
 {
   "name": "yudu-component-kit",
-  "version": "0.0.18",
+  "version": "0.0.20",
   "license":"MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/FineYUDU/YuduComponentKit"
   },
-  "keywords": ["fineYudu","yudu","ui","YuduComponentKit","ComponentKit"],
+  "keywords": ["front-end","css","scss","angular","fineYudu","yudu","ui","YuduComponentKit","ComponentKit"],
   "author": {
     "name": "Fine Yudu",
      "email": "fine_567@hotmail.com",
