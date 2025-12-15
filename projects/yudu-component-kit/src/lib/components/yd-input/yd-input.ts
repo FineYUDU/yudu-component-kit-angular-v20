@@ -28,13 +28,13 @@ export type InputType = 'text' | 'email' | 'password' | 'number' | 'date';
 export class YdInput implements ControlValueAccessor{
   public autocomplete = input<string | null>(null);
   public errorMessage = input<string | null>(null);
+  public fullSize = input(false, { transform: booleanAttribute });
   public hasError = input<boolean>(false);
   public icon = input<YdIconName | null>(null);
+  public isDisabled = input(false, { transform: booleanAttribute });
   public maxLength = input<number>(50);
   public placeholder = input<string | null>(null);
   public type = input<InputType>('text');
-  public fullSize = input(false, { transform: booleanAttribute });
-  public isDisabled = input(false, { transform: booleanAttribute });
 
   public value = signal<string>(''); 
   public isDisabledState = signal<boolean>(false);
