@@ -1,6 +1,6 @@
 {
   "name": "yudu-workspace",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "scripts": {
     "ng": "ng",
     "watch": "ng build --watch --configuration development",
