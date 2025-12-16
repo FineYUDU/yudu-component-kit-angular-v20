@@ -3,17 +3,14 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "lint": "ng lint",
-    "test": "ng test",
-    "yudu:test": "ng test yudu-component-kit",
-    "yudu:test:coverage": "ng test yudu-component-kit --code-coverage",
-    "yudu:testbed": "ng serve testbed -o",
-    "yudu:build": "ng test yudu-component-kit --watch=false --browsers=ChromeHeadless && ng build yudu-component-kit",
-    "yudu:lint": "ng lint yudu-component-kit",
-    "yudu:publish": "npm run yudu:build && npm publish dist/yudu-component-kit/ --access public"
+    "start": "ng serve testbed",
+    "dev": "ng serve testbed -o",
+    "test": "ng test yudu-component-kit",
+    "test:coverage": "ng test yudu-component-kit --code-coverage --watch=false --browsers=ChromeHeadless",
+    "build": "ng test yudu-component-kit --watch=false --browsers=ChromeHeadless && ng build yudu-component-kit",
+    "publish": "npm run build && npm publish dist/yudu-component-kit/ --access public"
   },
   "prettier": {
     "printWidth": 100,

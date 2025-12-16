@@ -1,0 +1,28 @@
+<div class="field__container">
+    @if(icon()) {
+        <div class="field__icon">
+            <yd-icon 
+                [name]="icon() || 'envelope'"
+                color="var(--yd-color-text-secondary)"
+            />
+        </div>
+    }
+    <input 
+        class="yd-input__body"
+        [class.input__disabled]="isDisabled()"
+        [class.w--100]="fullSize()"
+        [class.input__error]="hasError()"
+        [class.has-icon]="icon()"
+        [placeholder]="placeholder()"
+        [type]="type()"
+        [autocomplete]="autocomplete()"
+        [value]="value()"
+        (input)="handleInput($event)"
+        (blur)="handleBlur()"
+        [attr.maxlength]="maxLength()"
+        [disabled]="isDisabledState()"
+    >
+</div>
+@if(hasError()) {
+    <span class="error__message">{{errorMessage()}}</span>
+}
