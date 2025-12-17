@@ -28,4 +28,4 @@ jobs:
 
       # Tu script ya hace: test headless de la lib + build de la lib
       - name: Test & build library
-        run: npm run yudu:build
+        run: npm run build
