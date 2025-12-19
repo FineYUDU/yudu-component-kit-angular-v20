@@ -3,7 +3,7 @@
         <div class="field__icon">
             <yd-icon 
                 [name]="icon() || 'envelope'"
-                color="var(--yd-color-text-secondary)"
+                [color]="isDisabled() ? 'var(--yd-input-color-text-disabled)' : 'var(--yd-color-text-secondary)'"
             />
         </div>
     }
@@ -23,6 +23,6 @@
         [disabled]="isDisabledState()"
     >
 </div>
-@if(hasError()) {
+@if(hasError() && errorMessage()) {
     <span class="error__message">{{errorMessage()}}</span>
 }

@@ -1,6 +1,15 @@
-<i 
-    [ngClass]="['pi '+nameComputed()]"
-    [style.color]="color()"
-    [style.font-size]="sizeComputed()"
-    >
-</i>
+@if(this.name() === 'spinner') {
+    <i 
+        ngClass="pi pi-spin pi-spinner"
+        [style.color]="color()"
+        [style.font-size]="sizeComputed()"
+        >
+    </i>
+} @else {
+    <i 
+        [ngClass]="['pi '+nameComputed()]"
+        [style.color]="color()"
+        [style.font-size]="sizeComputed()"
+        >
+    </i>
+}

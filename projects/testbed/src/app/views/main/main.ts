@@ -3,6 +3,8 @@ import { Component, inject, signal,} from '@angular/core';
 // import { YdInput } from '../../components/yd-input/yd-input';
 
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
+import { YdInput } from "../../../../../yudu-component-kit/src/lib/components/yd-input/yd-input";
+import { YdIcon } from "../../../../../yudu-component-kit/src/lib/components/yd-icon/yd-icon";
 // import { JsonPipe } from '@angular/common';
 // import { YdChip } from "yudu-component-kit";
 
@@ -13,6 +15,8 @@ import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
     // JsonPipe,
     // YdChip
     ReactiveFormsModule,
+    YdInput,
+    YdIcon
 ],
   templateUrl: './main.html',
   styleUrl: './main.css',
