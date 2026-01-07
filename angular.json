@@ -42,10 +42,7 @@
             "browser": "projects/testbed/src/main.ts",
             "tsConfig": "projects/testbed/tsconfig.app.json",
             "assets": [
-              {
-                "glob": "**/*",
-                "input": "projects/testbed/public"
-              }
+              "projects/testbed/src/assets"
             ],
             "styles": [
               "projects/testbed/src/styles.css",

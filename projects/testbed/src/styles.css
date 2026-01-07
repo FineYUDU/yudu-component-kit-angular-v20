@@ -1,64 +1,87 @@
 @import url('../../yudu-component-kit/src/lib/styles/index.design-system.scss');
 
-.yd-input__container {
-    display: flex;
-    flex-direction: column;
-    width: fit-content;
-    gap: var(--spacing-xs);
 
-    .field__container {
-        position: relative;
-        .field__icon {
+.yd-header__container {
+    position: relative;
+    display: flex;
+    background-color: var(--yd-color-surface-secondary);
+    border-radius: var(--radius-minimal);
+    border: var(--border-xs) solid var(--yd-color-border-tertiary);
+    
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-height: 2.8125rem;
+        padding: var(--spacing-xs) var(--spacing-sm);
+        width: 100%;
+
+        a {
+            display: flex;
+        }
+
+        .right-block {
             display: flex;
             align-items: center;
-            position: absolute;
-            padding-left: var(--spacing-xs);
-            height: 100%;
-        }
+            gap: var(--spacing-md);
+
+            ul {
+                display: flex;
+                gap: var(--spacing-xs);
+                height: 100%;
+                li {
+                    display: flex;
+                    gap: var(--spacing-xs);
+                    align-items: center;
+                    padding: var(--spacing-2xs) var(--spacing-xs);
+                    display: flex;
+                    align-items: center;
+                    border-radius: var(--radius-minimal);
+                    cursor: pointer;
         
-        input {
-            outline: transparent;
-            padding: var(--spacing-xs);
-            border-radius: var(--radius-minimal);
-            border-width: var(--border-xs);
-            border-style:solid;
-            border-color:var(--yd-input-color-border-default);
-            background-color: var(--yd-input-color-surface-defaults);
-            font-size: var(--font-size-c1);
-            font-weight:500;
-            color: var(--yd-input-color-text-default);
-            
-            &.has-icon {
-                padding-left: calc(var(--spacing-sm) + .6rem);
-            }
-            &:hover {
-                background-color: var(--yd-input-color-surface-hover);
-            }
-            &:focus-visible {
-                border-color:var(--yd-input-color-border-focus);
-            }
-            &.input__error {
-                border-color:var(--yd-input-color-border-error);
-            }
-            &.input__disabled {
-                border-color:var(--yd-input-color-border-disabled);
-                background-color: var(--yd-input-color-surface-disabled);
-                pointer-events: none;
-                user-select: none;
-                cursor: not-allowed;
-                filter: grayscale(20%);
-                &::placeholder {
-                    color: var(--yd-input-color-text-disabled);
+                    &:hover { 
+                        background-color: var(--yd-color-surface-quaternary); 
+                    }
+        
+                    &:active { 
+                        background-color: var(--yd-color-surface-primary); 
+                    }
+                    
                 }
+            }
+            .semisection__container {
+                display: flex;
+                gap: var(--spacing-sm);
+            }
+            .notifications__container {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                width: 2.1875rem;
+                height: 2.1875rem;
+                border-radius: var(--radius-full);
+                border: var(--border-xs) solid var(--yd-color-border-primary);
+                
+                &:hover { 
+                    background-color: var(--yd-color-surface-quaternary); 
+                }
+
+                &:active { 
+                    background-color: var(--yd-color-surface-primary); 
+                }
+            }
+
+            .user__container {
+                display: flex;
+                cursor: pointer;
+                overflow: hidden;
+                border-radius: var(--radius-full);
+                border: var(--border-xs) solid var(--yd-color-border-primary);
             }
         }
     }
 
-    .error__message {
-        padding-left: var(--spacing-xs);
-        font-weight: 500;
-        font-size: var(--font-size-c1);
-        color: var(--yd-input-color-text-error);
-    }
+
 
 }

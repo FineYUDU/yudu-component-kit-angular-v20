@@ -3,6 +3,7 @@
         ngClass="pi pi-spin pi-spinner"
         [style.color]="color()"
         [style.font-size]="sizeComputed()"
+        [style.display]="'block'"
         >
     </i>
 } @else {
@@ -10,6 +11,7 @@
         [ngClass]="['pi '+nameComputed()]"
         [style.color]="color()"
         [style.font-size]="sizeComputed()"
+        [style.display]="'block'"
         >
     </i>
 }
