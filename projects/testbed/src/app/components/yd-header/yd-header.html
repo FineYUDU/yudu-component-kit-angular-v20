@@ -1,6 +1,6 @@
 <nav>
-    @if (routerLogo().length < 1) {
-        <a routerLink="../">
+    @if (routerLogo().length > 1) {
+        <a [routerLink]="routerLogo()">
             <img 
                 [ngSrc]="companyLogo()"
                 width="30"
@@ -20,28 +20,40 @@
         <ul>
             @for (item of navMenu(); track $index) {
                 <li>
-                    <yd-icon
-                        [name]="item.icon"
-                    />
-                    <span class="
-                        font__size--c1
-                        font__weight--medium
-                        font__color--primary
-                        ">
-                        {{ item.label }}
-                    </span>
+                    <a [routerLink]="item.router">
+                        <yd-icon
+                            [name]="item.icon"
+                        />
+                        <span class="
+                            font__size--c1
+                            font__weight--medium
+                            font__color--primary
+                            ">
+                            {{ item.label }}
+                        </span>
+                    </a>
                 </li>
             }
         </ul>
 
         <div class="semisection__container">
-            <div class="notifications__container">
-                <yd-icon
-                    name="bell"
-                    size="large"
+            @if (hasNotifications()) {
+                <div class="notifications__container">
+                    <yd-icon
+                        name="bell"
+                        size="large"
+                    />
+                </div>
+            }
+
+            <div class="search__container">
+                <yd-input 
+                    icon="search"
+                    placeholder="Search"
                 />
             </div>
-    
+
+
             <div class="user__container">
                 <img 
                     [ngSrc]="profileImg()"

@@ -6,7 +6,7 @@
     "watch": "ng build --watch --configuration development",
     "lint": "ng lint",
     "start": "ng serve testbed",
-    "dev": "ng serve testbed -o",
+    "dev": "ng serve testbed --port=4000 -o",
     "test": "ng test yudu-component-kit",
     "test:coverage": "ng test yudu-component-kit --code-coverage --watch=false --browsers=ChromeHeadless",
     "build": "ng test yudu-component-kit --watch=false --browsers=ChromeHeadless && ng build yudu-component-kit",
@@ -34,7 +34,7 @@
     "@angular/router": "^20.3.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
-    "yudu-component-kit": "^0.0.11"
+    "yudu-component-kit": "^1.0.3"
   },
   "devDependencies": {
     "@angular/build": "^20.3.8",

@@ -1,12 +1,13 @@
 import { NgOptimizedImage } from '@angular/common';
 import { Component, input } from '@angular/core';
 
-import { YdIcon, YdIconName } from 'yudu-component-kit';
+import { YdIcon, YdIconName, YdInput, YdButton } from 'yudu-component-kit';
 import { RouterLink } from "@angular/router";
 
 export interface NavMenu {
   label:string;
   icon:YdIconName;
+  router:string;
 }
 
 
@@ -15,7 +16,9 @@ export interface NavMenu {
   imports: [
     NgOptimizedImage,
     YdIcon,
-    RouterLink
+    RouterLink,
+    YdInput,
+    YdButton
 ],
   templateUrl: './yd-header.html',
   host: {
@@ -26,19 +29,23 @@ export class YdHeader {
   public navMenu = input<NavMenu[]>([
     {
       label:'Home',
-      icon:'home'
+      icon:'home',
+      router:'home',
     },
     {
       label:'features',
-      icon:'star'
+      icon:'star',
+      router:'features',
     },
     {
       label:'projects',
-      icon:'search'
+      icon:'search',
+      router:'projects',
     },
   ]);
   public companyLogo = input<string>('../../../assets/logo.svg');
   public profileImg = input<string>('../../../assets/profile-pic.jpg');
   public routerLogo = input<string>('./');
+  public hasNotifications = input<boolean>(false);
 
 }

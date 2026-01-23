@@ -12,7 +12,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        max-height: 2.8125rem;
+        max-height: 3.4375rem;
         padding: var(--spacing-xs) var(--spacing-sm);
         width: 100%;
 
@@ -30,28 +30,37 @@
                 gap: var(--spacing-xs);
                 height: 100%;
                 li {
-                    display: flex;
-                    gap: var(--spacing-xs);
-                    align-items: center;
-                    padding: var(--spacing-2xs) var(--spacing-xs);
-                    display: flex;
-                    align-items: center;
-                    border-radius: var(--radius-minimal);
-                    cursor: pointer;
-        
-                    &:hover { 
-                        background-color: var(--yd-color-surface-quaternary); 
+                    a {
+                        display: flex;
+                        gap: var(--spacing-xs);
+                        align-items: center;
+                        padding: var(--spacing-xs);
+                        display: flex;
+                        align-items: center;
+                        border-radius: var(--radius-minimal);
+                        cursor: pointer;
+                        
+                        &:hover { 
+                            background-color: var(--yd-color-surface-quaternary); 
+                        }
+            
+                        &:active { 
+                            background-color: var(--yd-color-surface-primary); 
+                        }
                     }
         
-                    &:active { 
-                        background-color: var(--yd-color-surface-primary); 
-                    }
                     
                 }
             }
             .semisection__container {
                 display: flex;
                 gap: var(--spacing-sm);
+
+                .search__container {
+                    display: flex;
+                    gap: var(--spacing-sm);
+
+                }
             }
             .notifications__container {
                 display: flex;
