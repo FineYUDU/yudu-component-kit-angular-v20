@@ -1,7 +1,7 @@
 import { NgOptimizedImage } from '@angular/common';
 import { Component, input } from '@angular/core';
 
-import { YdIcon, YdIconName, YdInput, YdButton } from 'yudu-component-kit';
+import { YdIcon, YdIconName, YdInput } from 'yudu-component-kit';
 import { RouterLink } from "@angular/router";
 
 export interface NavMenu {
@@ -18,7 +18,6 @@ export interface NavMenu {
     YdIcon,
     RouterLink,
     YdInput,
-    YdButton
 ],
   templateUrl: './yd-header.html',
   host: {
@@ -43,6 +42,7 @@ export class YdHeader {
       router:'projects',
     },
   ]);
+  
   public companyLogo = input<string>('../../../assets/logo.svg');
   public profileImg = input<string>('../../../assets/profile-pic.jpg');
   public routerLogo = input<string>('./');

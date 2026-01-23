@@ -1,0 +1,90 @@
+.yd-navbar__container {
+    position: relative;
+    display: flex;
+    background-color: var(--yd-color-surface-secondary);
+    border-radius: var(--radius-minimal);
+    border: var(--border-xs) solid var(--yd-color-border-tertiary);
+    
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-height: 3.4375rem;
+        padding: var(--spacing-xs) var(--spacing-sm);
+        width: 100%;
+
+        a {
+            display: flex;
+        }
+
+        .right-block {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-md);
+
+            ul {
+                display: flex;
+                gap: var(--spacing-xs);
+                height: 100%;
+                li {
+                    a {
+                        display: flex;
+                        gap: var(--spacing-xs);
+                        align-items: center;
+                        padding: var(--spacing-xs);
+                        display: flex;
+                        align-items: center;
+                        border-radius: var(--radius-minimal);
+                        cursor: pointer;
+                        
+                        &:hover { 
+                            background-color: var(--yd-color-surface-quaternary); 
+                        }
+            
+                        &:active { 
+                            background-color: var(--yd-color-surface-primary); 
+                        }
+                    }
+        
+                    
+                }
+            }
+            .semisection__container {
+                display: flex;
+                gap: var(--spacing-sm);
+
+                .search__container {
+                    display: flex;
+                    gap: var(--spacing-sm);
+
+                }
+            }
+            .notifications__container {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                width: 2.1875rem;
+                height: 2.1875rem;
+                border-radius: var(--radius-full);
+                border: var(--border-xs) solid var(--yd-color-border-primary);
+                
+                &:hover { 
+                    background-color: var(--yd-color-surface-quaternary); 
+                }
+
+                &:active { 
+                    background-color: var(--yd-color-surface-primary); 
+                }
+            }
+
+            .user__container {
+                display: flex;
+                cursor: pointer;
+                overflow: hidden;
+                border-radius: var(--radius-full);
+                border: var(--border-xs) solid var(--yd-color-border-primary);
+            }
+        }
+    }
+}
