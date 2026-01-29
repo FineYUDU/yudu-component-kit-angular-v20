@@ -1,0 +1,70 @@
+<section class="user__row">
+    <img 
+        [src]="profileImg()"
+        width="30"
+        height="30"
+        alt="company-logo"
+    >
+
+    <div class="user-name__container">
+        <p class="
+            font__size--c1
+            font__color--primary
+            font__wigth--bold
+            ">
+            {{ username() }}
+        </p>
+        <p class="
+            font__size--c1
+            font__color--secondary
+            font__wigth--bold
+            ">
+            {{ fullName() }}
+        </p>
+    </div>
+
+</section>
+
+    <div class="hr"></div>
+
+<section class="dropdown-menu__row">
+    <ul class="dropdown-menu">
+        @for( item of dropdownMenu(); track item.label) {
+            <li class="
+                font__size--c1
+                font__color--primary
+                font__wigth--bold
+                ">
+                <a [routerLink]="item.route" (click)="toggleDropdow(this.dropdownIsOpen())">
+                    <yd-icon 
+                        [color]="'var(--yd-color-text-secondary)'"
+                        [name]="item.icon"
+                    />
+                    {{ item.label }}
+                </a>
+            </li>
+        }
+    </ul>
+
+</section>
+    <div class="hr"></div>
+
+<section class="sign-out__row">
+    <ul>
+        <li class="
+            font__size--c1
+            font__color--primary
+            font__wigth--bold
+            ">
+            <a (click)="signOut()">
+                <yd-icon 
+                    [color]="'var(--yd-color-text-secondary)'"
+                    [name]="'sign-out'"
+                />
+                sign out
+            </a>
+        </li>
+    </ul>
+
+</section>
+

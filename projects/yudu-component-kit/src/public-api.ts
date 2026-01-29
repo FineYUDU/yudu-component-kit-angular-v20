@@ -9,7 +9,7 @@ export * from './lib/components/yd-button/yd-button';
 export * from './lib/components/yd-chip/yd-chip';
 export * from './lib/components/yd-icon/yd-icon';
 export * from './lib/components/yd-input/yd-input';
-export * from './lib/components/yd-navbar/yd-navbar';
+// export * from './lib/components/yd-navbar/yd-navbar';
 // Interfaces & Types
 export * from './lib/interfaces/index';
 

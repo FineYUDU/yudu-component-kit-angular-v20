@@ -1,1 +1,10 @@
-<yd-header></yd-header>
+<yd-navbar
+    (signOutEmit)="signOut()"
+    [companyLogo]="companyLogo()"
+    [profileImg]="companyLogo()"
+    [navMenu]="navMenu()"
+    [username]="'FineYudu'"
+    [fullName]="'Erick Alcocer'"
+    [dropdownMenu]="dropdownMenu()"
+/>
+<router-outlet/>

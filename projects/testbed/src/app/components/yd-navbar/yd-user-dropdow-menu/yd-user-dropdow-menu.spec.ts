@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { YdHeader } from './yd-header';
+import { YdUserDropdowMenu } from './yd-user-dropdow-menu';
 
-describe('YdHeader', () => {
-  let component: YdHeader;
-  let fixture: ComponentFixture<YdHeader>;
+describe('YdUserDropdowMenu', () => {
+  let component: YdUserDropdowMenu;
+  let fixture: ComponentFixture<YdUserDropdowMenu>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [YdHeader]
+      imports: [YdUserDropdowMenu]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(YdHeader);
+    fixture = TestBed.createComponent(YdUserDropdowMenu);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,4 +1,4 @@
-<!-- <nav>
+<nav>
     <a [routerLink]="companyLogoRoute()">
         <img 
             [src]="companyLogo()"
@@ -11,7 +11,7 @@
         <ul>
             @for (item of navMenu(); track $index) {
                 <li>
-                    <a [routerLink]="item.router">
+                    <a [routerLink]="item.route">
                         <yd-icon
                             [name]="item.icon"
                         />
@@ -49,10 +49,20 @@
                     width="30"
                     height="30"
                     alt="company-logo"
-                >
+                    (click)="toggleDropdown()"
+                    >
+                <yd-user-dropdow-menu
+                    (toggleEmit)="handleToggleEmmit($event)"
+                    [dropdownIsOpen]="dropdownIsOpen()"
+                    (signOutEmit)="handleSignOut()"
+                    [dropdownMenu]="dropdownMenu()"
+                    [fullName]="fullName()"
+                    [profileImg]="profileImg()"
+                    [username]="username()"
+                />
             </div>
         </div>
 
     </section>
 </nav>
- -->
+

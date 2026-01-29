@@ -1,7 +1,7 @@
 @import url('../../yudu-component-kit/src/lib/styles/index.design-system.scss');
 
 
-.yd-header__container {
+.yd-navbar__container {
     position: relative;
     display: flex;
     background-color: var(--yd-color-surface-secondary);
@@ -84,13 +84,67 @@
             .user__container {
                 display: flex;
                 cursor: pointer;
-                overflow: hidden;
                 border-radius: var(--radius-full);
                 border: var(--border-xs) solid var(--yd-color-border-primary);
+                
+                img {
+                    border-radius: var(--radius-full);
+                    overflow: hidden;
+                }
             }
         }
     }
+}
 
 
+.yd-user-dropdown-menu {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--yd-color-surface-secondary);
+    border: var(--border-xs) solid var(--yd-color-border-tertiary);
+    gap: var(--spacing-sm);
+    position: absolute;
+    top:110%;
+    right: 0;
+    width: 16rem;
+    overflow: hidden;
+    clip-path: polygon(100% 0, 100% 0, 100% 0, 100% 0);
+    padding: var(--spacing-xs);
+    border-radius: var(--radius-minimal);
+    transition: clip-path, ease-in-out, .3s;
+    pointer-events: none;
+    
+    &.open {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+        transition: clip-path, ease-in-out, .3s;
+        pointer-events: all;
+    }
 
+    .hr {
+        border-top: var(--border-xs) solid var(--yd-color-border-tertiary);
+    }
+
+    .user__row {
+        display: flex;
+        gap: var(--spacing-xs);
+        img {
+            overflow: hidden;
+            border: var(--border-xs) solid var(--yd-color-border-primary);
+            border-radius: var(--radius-full);
+        }
+    }
+
+    .dropdown-menu__row {
+        .dropdown-menu {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+    }
+
+    .sign-out__row {
+        li {
+            width: 100%;
+        }
+    }
 }
