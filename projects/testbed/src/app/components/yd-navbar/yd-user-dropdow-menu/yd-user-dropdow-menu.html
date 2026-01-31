@@ -28,20 +28,31 @@
     <div class="hr"></div>
 
 <section class="dropdown-menu__row">
-    <ul class="dropdown-menu">
-        @for( item of dropdownMenu(); track item.label) {
+    <ul class="dropdown-menu-list">
+        @for( item of settingsMenu(); track item.label) {
             <li class="
                 font__size--c1
                 font__color--primary
                 font__wigth--bold
                 ">
-                <a [routerLink]="item.route" (click)="toggleDropdow(this.dropdownIsOpen())">
-                    <yd-icon 
-                        [color]="'var(--yd-color-text-secondary)'"
-                        [name]="item.icon"
-                    />
-                    {{ item.label }}
-                </a>
+                @if(item.route) {
+                    <a [routerLink]="item.route" (click)="toggleDropdow(this.dropdownIsOpen())">
+                        <yd-icon 
+                            [color]="'var(--yd-color-text-secondary)'"
+                            [name]="item.icon"
+                        />
+                        {{ item.label }}
+                    </a>
+                } @else {
+                    <a (click)="toggleDropdow(this.dropdownIsOpen())">
+                        <yd-icon 
+                            [color]="'var(--yd-color-text-secondary)'"
+                            [name]="item.icon"
+                        />
+                        {{ item.label }}
+                    </a>
+                    
+                }
             </li>
         }
     </ul>

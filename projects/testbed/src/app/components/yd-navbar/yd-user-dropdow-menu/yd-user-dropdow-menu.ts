@@ -3,7 +3,7 @@ import { Component, input, output, signal } from '@angular/core';
 import { YdIcon } from "yudu-component-kit";
 import { RouterLink } from "@angular/router";
 
-import { DropdownMenu } from '../../../interfaces/yd-user-dropdown-menu.interfaces';
+import { SettingsMenu } from '../../../interfaces/yd-user-dropdown-menu.interfaces';
 
 
 @Component({
@@ -21,7 +21,7 @@ export class YdUserDropdowMenu {
   public toggleEmit = output<boolean>();
 
   public dropdownIsOpen = input.required<boolean>();
-  public dropdownMenu = input<DropdownMenu[]>();
+  public settingsMenu = input<SettingsMenu[]>();
   public fullName = input<string>('');
   public profileImg = input<string>('');
   public username = input<string>('');
@@ -31,8 +31,8 @@ export class YdUserDropdowMenu {
   };
 
 
-  public toggleDropdow(event:boolean):void {
-    this.toggleEmit.emit(this.dropdownIsOpen());
-  }
+  public toggleDropdow( event:boolean ):void {
+    this.toggleEmit.emit( this.dropdownIsOpen() );
+  };
 
 }

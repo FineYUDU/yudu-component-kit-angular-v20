@@ -8,7 +8,7 @@
         >
     </a>
     <section class="right-block">
-        <ul>
+        <ul class="navbar-menu-list">
             @for (item of navMenu(); track $index) {
                 <li>
                     <a [routerLink]="item.route">
@@ -28,17 +28,21 @@
         </ul>
 
         <div class="semisection__container">
-            <div class="notifications__container">
-                <yd-icon
-                    name="bell"
-                    size="large"
-                />
-            </div>
-
             <div class="search__container">
                 <yd-input 
                     icon="search"
                     placeholder="Search"
+                />
+            </div>
+            <div class="notifications__container">
+                <yd-icon
+                    class="icon-notifications"
+                    name="bell"
+                    size="large"
+                    (click)="toggleNotifications()"
+                />
+                <yd-notifications
+                    [dropdownIsOpen]="notificationsDropdownIsOpen()"
                 />
             </div>
 
@@ -49,15 +53,15 @@
                     width="30"
                     height="30"
                     alt="company-logo"
-                    (click)="toggleDropdown()"
+                    (click)="toggleSettings()"
                     >
                 <yd-user-dropdow-menu
-                    (toggleEmit)="handleToggleEmmit($event)"
-                    [dropdownIsOpen]="dropdownIsOpen()"
                     (signOutEmit)="handleSignOut()"
-                    [dropdownMenu]="dropdownMenu()"
+                    (toggleEmit)="handleToggleSettingsEmmit($event)"
                     [fullName]="fullName()"
                     [profileImg]="profileImg()"
+                    [dropdownIsOpen]="settingsDropdownIsOpen()"
+                    [settingsMenu]="settingsMenu()"
                     [username]="username()"
                 />
             </div>

@@ -25,7 +25,7 @@
             align-items: center;
             gap: var(--spacing-md);
 
-            ul {
+            .navbar-menu-list {
                 display: flex;
                 gap: var(--spacing-xs);
                 height: 100%;
@@ -71,6 +71,7 @@
                 height: 2.1875rem;
                 border-radius: var(--radius-full);
                 border: var(--border-xs) solid var(--yd-color-border-primary);
+                position: relative;
                 
                 &:hover { 
                     background-color: var(--yd-color-surface-quaternary); 
@@ -79,13 +80,26 @@
                 &:active { 
                     background-color: var(--yd-color-surface-primary); 
                 }
+
+                .icon-notifications {
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                };
             }
 
             .user__container {
                 display: flex;
+                justify-content: center;
+                align-items: center;
                 cursor: pointer;
                 border-radius: var(--radius-full);
                 border: var(--border-xs) solid var(--yd-color-border-primary);
+                position: relative;
+                width: 2.1875rem;
+                height: 2.1875rem;
                 
                 img {
                     border-radius: var(--radius-full);
@@ -96,7 +110,6 @@
     }
 }
 
-
 .yd-user-dropdown-menu {
     display: flex;
     flex-direction: column;
@@ -104,7 +117,7 @@
     border: var(--border-xs) solid var(--yd-color-border-tertiary);
     gap: var(--spacing-sm);
     position: absolute;
-    top:110%;
+    top:calc(100% + var(--spacing-sm));
     right: 0;
     width: 16rem;
     overflow: hidden;
@@ -135,6 +148,162 @@
     }
 
     .dropdown-menu__row {
+        .dropdown-menu-list {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-xs);
+
+            li {
+                a {
+                    display: flex;
+                    gap: var(--spacing-xs);
+                    align-items: center;
+                    padding: var(--spacing-xs);
+                    display: flex;
+                    align-items: center;
+                    border-radius: var(--radius-minimal);
+                    cursor: pointer;
+                    
+                    &:hover { 
+                        background-color: var(--yd-color-surface-quaternary); 
+                    }
+        
+                    &:active { 
+                        background-color: var(--yd-color-surface-primary); 
+                    }
+                }
+    
+                
+            }
+
+        }
+    }
+
+    .sign-out__row {
+        li {
+            a {
+                display: flex;
+                gap: var(--spacing-xs);
+                align-items: center;
+                padding: var(--spacing-xs);
+                display: flex;
+                align-items: center;
+                border-radius: var(--radius-minimal);
+                cursor: pointer;
+                
+                &:hover { 
+                    background-color: var(--yd-color-surface-quaternary); 
+                }
+    
+                &:active { 
+                    background-color: var(--yd-color-surface-primary); 
+                }
+            }
+
+            
+        }
+    }
+}
+
+
+.yd-notifications {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--yd-color-surface-secondary);
+    border: var(--border-xs) solid var(--yd-color-border-tertiary);
+    gap: var(--spacing-sm);
+    position: absolute;
+    top:calc(100% + var(--spacing-sm));
+    right: 0;
+    width: 16rem;
+    overflow: hidden;
+    clip-path: polygon(100% 0, 100% 0, 100% 0, 100% 0);
+    padding: var(--spacing-xs);
+    border-radius: var(--radius-minimal);
+    transition: clip-path, ease-in-out, .3s;
+    pointer-events: none;
+    width: 20rem;
+    
+    &.open {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+        transition: clip-path, ease-in-out, .3s;
+        pointer-events: all;
+    }
+
+    .filter-menu {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--spacing-sm);
+        background-color: var(--yd-color-surface-primary);
+        padding: var(--spacing-2xs);
+        border-radius: var(--radius-minimal);
+        
+        li {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            border-radius: var(--radius-minimal);
+            padding: var(--spacing-2xs);
+
+            &.selected {
+                background-color: var(--yd-color-surface-secondary);
+            }
+        }
+    };
+
+    .notifications-list {
+        .p-top {
+            padding-top: var(--spacing-xs);
+        }
+        a {
+            position: relative;
+            display: grid;
+            width: 100%;
+            grid-template-columns: 3.125rem auto;
+            gap: var(--spacing-xs);
+            width: 100%;
+
+            .icon-notification__container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 3.125rem;
+                height: 3.125rem;
+                background-color: var(--yd-color-surface-primary);
+                border-radius: var(--radius-minimal);
+            }
+
+            .message__container {
+                display: flex;
+                flex-direction: column;
+                padding: var(--spacing-xs);
+                gap: var(--spacing-xs);
+            }
+
+            .hour {
+                position: absolute;
+                top: 0;
+                right: 0;
+            }
+        }
+    }
+
+    .hr {
+        border-top: var(--border-xs) solid var(--yd-color-border-tertiary);
+    }
+    /* 
+
+    .user__row {
+        display: flex;
+        gap: var(--spacing-xs);
+        img {
+            overflow: hidden;
+            border: var(--border-xs) solid var(--yd-color-border-primary);
+            border-radius: var(--radius-full);
+        }
+    }
+
+    .dropdown-menu__row {
         .dropdown-menu {
             display: flex;
             flex-direction: column;
@@ -146,5 +315,5 @@
         li {
             width: 100%;
         }
-    }
+    } */
 }

@@ -1,7 +1,7 @@
-import { Component, signal} from '@angular/core';
+import { Component, computed, signal} from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
-import { DropdownMenu } from '../../interfaces/yd-user-dropdown-menu.interfaces';
+import { SettingsMenu } from '../../interfaces/yd-user-dropdown-menu.interfaces';
 import { NavMenu } from '../../interfaces/yd-navbar.interfaces';
 
 import { YdNavbar } from '../../components/yd-navbar/yd-navbar';
@@ -19,7 +19,7 @@ import { YdNavbar } from '../../components/yd-navbar/yd-navbar';
 export default class Main {
   public companyLogo = signal<string>('../../../assets/logo.svg')
   
-  public navMenu = signal<NavMenu[]>([
+  public navMenu = computed<NavMenu[]>(() => [
     {
       label:'Home',
       route:'home',
@@ -37,7 +37,7 @@ export default class Main {
     },
   ]);
 
-  public dropdownMenu = signal<DropdownMenu[]>([
+  public settingsMenu = computed<SettingsMenu[]>( ()=> [
     {
       icon:'user',
       label:'Profile',

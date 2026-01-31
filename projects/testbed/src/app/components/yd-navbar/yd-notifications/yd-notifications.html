@@ -1,0 +1,88 @@
+<p class="
+    font__size--b1
+    font__color--primary
+    font__weight--medium
+    ">
+    {{'Notifications'}}
+    
+</p>
+<section>
+
+    <ul class="filter-menu">
+        <li (click)="selectFilter('all')"
+            [class.selected]="filterBy() === 'all'"
+            class="
+            font__size--c1
+            font__color--primary
+            font__weight--medium
+            ">
+            {{'All'}}
+        </li>
+        <li (click)="selectFilter('week')"
+            [class.selected]="filterBy() === 'week'"
+            class="
+            font__size--c1
+            font__color--primary
+            font__weight--medium
+            ">
+            {{'This week'}}
+        </li>
+        <li (click)="selectFilter('earlier')"
+            [class.selected]="filterBy() === 'earlier'"
+            class="
+            font__size--c1
+            font__color--primary
+            font__weight--medium
+            ">
+            {{'Earlier'}}
+        </li>
+    </ul>
+
+</section>
+
+<section>
+    <ul class="notifications-list">
+        @for (item of notifications();
+            track $index;
+            let last = $last;
+            ) {
+            <li class="p-top">
+                <a>
+                    <div class="icon-notification__container">
+                        <yd-icon
+                            [name]="'lightbulb'"
+                        />
+                    </div>
+                    <div class="message__container">
+                        <span class="
+                            font__size--c1
+                            font__color--primary
+                            font__weight--medium
+                            ">
+                            {{item.title}}
+                        </span>
+                        <span class="
+                            font__size--c1
+                            font__color--secondary
+                            font__weight--medium
+                            ">
+                            {{item.message}}
+                        </span>
+                    </div>
+                    <span class="
+                        hour
+                        font__size--c1
+                        font__color--secondary
+                        font__weight--medium
+                        ">
+                        {{ item.hour }}
+                    </span>
+                </a>
+            </li>
+            
+            @if(!last) {
+                <div class="hr"></div>
+            }
+        }
+    </ul>
+</section>
