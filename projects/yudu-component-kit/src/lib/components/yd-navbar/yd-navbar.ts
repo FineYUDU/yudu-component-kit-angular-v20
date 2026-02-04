@@ -1,14 +1,11 @@
 import { Component, input, output, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
-// TODO: Replaced
-import { YdIcon, YdInput } from 'yudu-component-kit';
+import { NavMenu, Notifications, SettingsMenu } from '../../interfaces';
 
-import { NavMenu } from '../../interfaces/yd-navbar.interfaces';
-import { Notifications } from '../../interfaces/yd-notifications.interfaces';
-import { SettingsMenu } from '../../interfaces/yd-user-dropdown-menu.interfaces';
-
-import { YdUserDropdowMenu } from "./yd-user-dropdow-menu/yd-user-dropdow-menu";
+import { YdIcon } from '../yd-icon/yd-icon';
+import { YdInput } from '../yd-input/yd-input';
 import { YdNotifications } from "./yd-notifications/yd-notifications";
+import { YdUserDropdowMenu } from "./yd-user-dropdow-menu/yd-user-dropdow-menu";
 
 @Component({
   selector: 'yd-navbar',

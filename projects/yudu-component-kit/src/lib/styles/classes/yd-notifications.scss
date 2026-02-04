@@ -1,0 +1,87 @@
+
+.yd-notifications {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--yd-color-surface-secondary);
+    border: var(--border-xs) solid var(--yd-color-border-tertiary);
+    gap: var(--spacing-sm);
+    position: absolute;
+    top:calc(100% + var(--spacing-sm));
+    right: 0;
+    width: 16rem;
+    overflow: hidden;
+    clip-path: polygon(100% 0, 100% 0, 100% 0, 100% 0);
+    padding: var(--spacing-xs);
+    border-radius: var(--radius-minimal);
+    transition: clip-path, ease-in-out, .3s;
+    pointer-events: none;
+    width: 20rem;
+    
+    &.open {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+        transition: clip-path, ease-in-out, .3s;
+        pointer-events: all;
+    }
+
+    .filter-menu {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--spacing-sm);
+        background-color: var(--yd-color-surface-primary);
+        padding: var(--spacing-2xs);
+        border-radius: var(--radius-minimal);
+        
+        li {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            border-radius: var(--radius-minimal);
+            padding: var(--spacing-2xs);
+
+            &.selected {
+                background-color: var(--yd-color-surface-secondary);
+            }
+        }
+    };
+
+    .notifications-list {
+        .p-top {
+            padding-top: var(--spacing-xs);
+        }
+        a {
+            position: relative;
+            display: grid;
+            width: 100%;
+            grid-template-columns: 3.125rem auto;
+            gap: var(--spacing-xs);
+            width: 100%;
+
+            .icon-notification__container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 3.125rem;
+                height: 3.125rem;
+                background-color: var(--yd-color-surface-primary);
+                border-radius: var(--radius-minimal);
+            }
+
+            .message__container {
+                display: flex;
+                flex-direction: column;
+                padding: var(--spacing-xs);
+                gap: var(--spacing-xs);
+            }
+
+            .hour {
+                position: absolute;
+                top: 0;
+                right: 0;
+            }
+        }
+    }
+
+    .hr {
+        border-top: var(--border-xs) solid var(--yd-color-border-tertiary);
+    }
+}

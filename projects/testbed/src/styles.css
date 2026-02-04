@@ -95,8 +95,8 @@
                 justify-content: center;
                 align-items: center;
                 cursor: pointer;
-                border-radius: var(--radius-full);
                 border: var(--border-xs) solid var(--yd-color-border-primary);
+                border-radius: var(--radius-full);
                 position: relative;
                 width: 2.1875rem;
                 height: 2.1875rem;
@@ -205,7 +205,6 @@
     }
 }
 
-
 .yd-notifications {
     display: flex;
     flex-direction: column;
@@ -291,29 +290,4 @@
     .hr {
         border-top: var(--border-xs) solid var(--yd-color-border-tertiary);
     }
-    /* 
-
-    .user__row {
-        display: flex;
-        gap: var(--spacing-xs);
-        img {
-            overflow: hidden;
-            border: var(--border-xs) solid var(--yd-color-border-primary);
-            border-radius: var(--radius-full);
-        }
-    }
-
-    .dropdown-menu__row {
-        .dropdown-menu {
-            display: flex;
-            flex-direction: column;
-            gap: 0;
-        }
-    }
-
-    .sign-out__row {
-        li {
-            width: 100%;
-        }
-    } */
 }

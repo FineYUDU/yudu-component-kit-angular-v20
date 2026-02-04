@@ -1,10 +1,9 @@
-import { Component, input, output, signal } from '@angular/core';
-
-import { YdIcon } from "yudu-component-kit";
+import { Component, input, output } from '@angular/core';
 import { RouterLink } from "@angular/router";
 
-import { SettingsMenu } from '../../../interfaces/yd-user-dropdown-menu.interfaces';
+import { SettingsMenu } from '../../../interfaces';
 
+import { YdIcon } from '../../yd-icon/yd-icon';
 
 @Component({
   selector: 'yd-user-dropdow-menu',

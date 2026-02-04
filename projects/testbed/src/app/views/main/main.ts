@@ -5,6 +5,7 @@ import { SettingsMenu } from '../../interfaces/yd-user-dropdown-menu.interfaces'
 import { NavMenu } from '../../interfaces/yd-navbar.interfaces';
 
 import { YdNavbar } from '../../components/yd-navbar/yd-navbar';
+import { Notifications } from '../../interfaces/yd-notifications.interfaces';
 
 
 @Component({
@@ -47,6 +48,33 @@ export default class Main {
       icon:'cog',
       label:'Settings',
       route:'settings',
+    },
+  ]);
+
+  public notifications = signal<Notifications[]>([
+    {
+      icon:'lightbulb',
+      date:new Date(),
+      title:'New user',
+      message:'Jorge is now available'
+    },
+    {
+      icon:'lightbulb',
+      date:new Date(),
+      title:'New user',
+      message:'Jorge is now available'
+    },
+    {
+      icon:'lightbulb',
+      date:new Date(),
+      title:'New user',
+      message:'Jorge is now available'
+    },
+    {
+      icon:'lightbulb',
+      date:new Date(),
+      title:'New user',
+      message:'Jorge is now available'
     },
   ]);
 

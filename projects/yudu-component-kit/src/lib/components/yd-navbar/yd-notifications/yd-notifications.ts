@@ -1,9 +1,12 @@
 import { Component, input, output, signal } from '@angular/core';
-import { YdIcon } from "yudu-component-kit";
-import { Notifications } from '../../../interfaces/yd-notifications.interfaces';
+
+import { Notifications } from '../../../interfaces';
+
+import { YdIcon } from '../../yd-icon/yd-icon';
+
 @Component({
   selector: 'yd-notifications',
-  imports: [YdIcon],
+  imports: [ YdIcon ],
   templateUrl: './yd-notifications.html',
   host: {
     'class':'yd-notifications',

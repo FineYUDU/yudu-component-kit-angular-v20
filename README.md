@@ -34,7 +34,7 @@
 - Chip ✅
 - Icons ✅
 - Input ✅
-- Header 👷🏾
+- Navbar 👷🏾
 - Footer 👷🏾
 - Sidebar 👷🏾
 

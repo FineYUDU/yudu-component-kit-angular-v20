@@ -2,11 +2,12 @@
     <yd-navbar
         (signOutEmit)="signOut()"
         [companyLogo]="companyLogo()"
-        [profileImg]="companyLogo()"
-        [navMenu]="navMenu()"
-        [username]="'FineYudu'"
         [fullName]="'Erick Alcocer'"
+        [navMenu]="navMenu()"
+        [notifications]="notifications()"
+        [profileImg]="companyLogo()"
         [settingsMenu]="settingsMenu()"
+        [username]="'FineYudu'"
     />
     <router-outlet/>
 </main>
