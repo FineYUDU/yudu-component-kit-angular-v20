@@ -59,11 +59,11 @@
                 <yd-user-dropdow-menu
                     (signOutEmit)="handleSignOut()"
                     (toggleEmit)="handleToggleSettingsEmmit($event)"
-                    [fullName]="fullName()"
+                    [subTitle]="subTitle()"
+                    [title]="title()"
                     [profileImg]="profileImg()"
                     [dropdownIsOpen]="settingsDropdownIsOpen()"
                     [settingsMenu]="settingsMenu()"
-                    [username]="username()"
                 />
             </div>
         </div>

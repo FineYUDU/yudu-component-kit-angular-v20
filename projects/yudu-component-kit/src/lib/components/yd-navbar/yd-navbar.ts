@@ -25,11 +25,11 @@ export class YdNavbar {
   public signOutEmit = output<void>();
 
   public companyLogo = input.required<string>();
-  public fullName = input.required<string>();
   public navMenu = input.required<NavMenu[]>();
   public profileImg = input.required<string>();
   public settingsMenu = input.required<SettingsMenu[]>();
-  public username = input.required<string>();
+  public subTitle = input.required<string>();
+  public title = input.required<string>();
 
   public companyLogoRoute = input<string>('');
   public notifications = input<Notifications[]>([]);

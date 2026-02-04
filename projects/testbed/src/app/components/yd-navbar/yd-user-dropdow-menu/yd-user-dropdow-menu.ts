@@ -1,4 +1,4 @@
-import { Component, input, output, signal } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 
 import { YdIcon } from "yudu-component-kit";
 import { RouterLink } from "@angular/router";
@@ -21,11 +21,11 @@ export class YdUserDropdowMenu {
   public toggleEmit = output<boolean>();
 
   public dropdownIsOpen = input.required<boolean>();
-  public fullName = input.required<string>();
   public settingsMenu = input.required<SettingsMenu[]>();
+  public subTitle = input.required<string>();
+  public title = input.required<string>();
 
   public profileImg = input<string>('');
-  public username = input<string>('');
   
   public signOut():void {
     this.signOutEmit.emit();

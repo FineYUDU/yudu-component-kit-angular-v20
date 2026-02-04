@@ -20,11 +20,11 @@ export class YdUserDropdowMenu {
   public toggleEmit = output<boolean>();
 
   public dropdownIsOpen = input.required<boolean>();
-  public fullName = input.required<string>();
   public settingsMenu = input.required<SettingsMenu[]>();
+  public subTitle = input.required<string>();
+  public title = input.required<string>();
 
   public profileImg = input<string>('');
-  public username = input<string>('');
   
   public signOut():void {
     this.signOutEmit.emit();
