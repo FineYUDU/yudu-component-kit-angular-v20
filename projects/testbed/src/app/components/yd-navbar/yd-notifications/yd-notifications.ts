@@ -1,6 +1,10 @@
 import { Component, input, output, signal } from '@angular/core';
+
 import { YdIcon } from "yudu-component-kit";
-import { Notifications } from '../../../interfaces/yd-notifications.interfaces';
+
+import { Notifications, NotificationsFilter } from '../../../interfaces/yd-notifications.interfaces';
+
+
 @Component({
   selector: 'yd-notifications',
   imports: [YdIcon],
@@ -15,6 +19,9 @@ export class YdNotifications {
   public toggleEmit = output<boolean>();
 
   public dropdownIsOpen = input.required<boolean>();
+  public notificationsTitle = input.required<string>();
+  public filtersOptions = input.required<NotificationsFilter[]>();
+
   public filterBy = signal<string>('all'); 
   public notifications = input.required<Notifications[]>();
 

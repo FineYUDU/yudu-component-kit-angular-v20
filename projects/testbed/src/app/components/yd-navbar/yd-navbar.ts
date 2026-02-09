@@ -4,8 +4,8 @@ import { RouterLink } from '@angular/router';
 import { YdIcon, YdInput } from 'yudu-component-kit';
 
 import { NavMenu } from '../../interfaces/yd-navbar.interfaces';
-import { Notifications } from '../../interfaces/yd-notifications.interfaces';
-import { SettingsMenu } from '../../interfaces/yd-user-dropdown-menu.interfaces';
+import { Notifications, NotificationsFilter } from '../../interfaces/yd-notifications.interfaces';
+import { DropdownMenu } from '../../interfaces/yd-user-dropdown-menu.interfaces';
 
 import { YdUserDropdowMenu } from "./yd-user-dropdow-menu/yd-user-dropdow-menu";
 import { YdNotifications } from "./yd-notifications/yd-notifications";
@@ -26,16 +26,35 @@ import { YdNotifications } from "./yd-notifications/yd-notifications";
 })
 export class YdNavbar {
   public signOutEmit = output<void>();
+  
+  public companyLogoRoute = input<string>('');
+  public notifications = input<Notifications[]>([]);
+  public signOutTitle = input<string>('sign out');
+  public placeholder = input<string>('search');
+  public notificationsTitle = input<string>('Notifications');
+  public filtersOptions = input<NotificationsFilter[]>([
+    {
+      label:'all',
+      value:'all',
+    },
+    {
+      label:'this week',
+      value:'week',
+    },
+    {
+      label:'earlier',
+      value:'earlier',
+    },
+  ]);
 
   public companyLogo = input.required<string>();
   public subTitle = input.required<string>();
-  public navMenu = input.required<NavMenu[]>();
+  public headerMenu = input<NavMenu[]>();
   public profileImg = input.required<string>();
-  public settingsMenu = input.required<SettingsMenu[]>();
+  public userMenu = input.required<DropdownMenu[]>();
   public title = input.required<string>();
-
-  public companyLogoRoute = input<string>('');
-  public notifications = input<Notifications[]>([]);
+  public themeMenu = input.required<DropdownMenu[]>();
+  public langMenu = input.required<DropdownMenu[]>();
 
   public notificationsDropdownIsOpen = signal<boolean>(false);
   public settingsDropdownIsOpen = signal<boolean>(false);
@@ -61,6 +80,5 @@ export class YdNavbar {
     this.notificationsDropdownIsOpen.set(!this.notificationsDropdownIsOpen());
     this.settingsDropdownIsOpen.set(false);
   };
-
 
 }

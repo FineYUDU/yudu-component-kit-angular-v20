@@ -8,3 +8,8 @@ export interface Notifications {
   message:string;
   route?:string;
 }
+
+export interface NotificationsFilter {
+  label:string;
+  value:string;
+}

@@ -13,8 +13,24 @@
         padding: var(--spacing-xs) var(--spacing-sm);
         width: 100%;
 
-        a {
+        .bars__container {
+            position: relative;
             display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            width: 2.1875rem;
+            height: 2.1875rem;
+            border-radius: var(--radius-full);
+            border: var(--border-xs) solid var(--yd-color-border-primary);
+
+            &:hover { 
+                background-color: var(--yd-color-surface-quaternary); 
+            }
+
+            &:active { 
+                background-color: var(--yd-color-surface-primary); 
+            }
         }
 
         .right-block {
@@ -52,6 +68,11 @@
             .semisection__container {
                 display: flex;
                 gap: var(--spacing-sm);
+
+                .buttons__container {
+                    display: flex;
+                    gap: var(--spacing-xs);
+                }
 
                 .search__container {
                     display: flex;
@@ -91,14 +112,13 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                border: var(--border-xs) solid var(--yd-color-border-primary);
                 cursor: pointer;
-                border-radius: var(--radius-full);
                 position: relative;
                 width: 2.1875rem;
                 height: 2.1875rem;
                 
                 img {
+                    border: var(--border-xs) solid var(--yd-color-border-primary);
                     border-radius: var(--radius-full);
                     overflow: hidden;
                 }

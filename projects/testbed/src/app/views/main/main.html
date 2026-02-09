@@ -2,12 +2,18 @@
     <yd-navbar
         (signOutEmit)="signOut()"
         [companyLogo]="companyLogo()"
-        [navMenu]="navMenu()"
         [notifications]="notifications()"
         [profileImg]="companyLogo()"
-        [settingsMenu]="settingsMenu()"
+        [userMenu]="userMenu()"
         [subTitle]="'Erick Alcocer'"
-        [title]="'FineYudu'"
+        [title]="'admin'"
+        [themeMenu]="themeMenu()"
+        [langMenu]="langMenu()"
+        [filtersOptions]="filtersOptions()"
+        notificationsTitle="notifications.title"
+        signOutTitle="signout"
+        placeholder="input.search"
     />
     <router-outlet/>
+
 </main>

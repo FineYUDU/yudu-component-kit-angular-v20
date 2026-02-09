@@ -3,39 +3,23 @@
     font__color--primary
     font__weight--medium
     ">
-    {{'Notifications'}}
+    {{ notificationsTitle() }}
     
 </p>
 <section>
 
     <ul class="filter-menu">
-        <li (click)="selectFilter('all')"
-            [class.selected]="filterBy() === 'all'"
-            class="
-            font__size--c1
-            font__color--primary
-            font__weight--medium
-            ">
-            {{'All'}}
-        </li>
-        <li (click)="selectFilter('week')"
-            [class.selected]="filterBy() === 'week'"
-            class="
-            font__size--c1
-            font__color--primary
-            font__weight--medium
-            ">
-            {{'This week'}}
-        </li>
-        <li (click)="selectFilter('earlier')"
-            [class.selected]="filterBy() === 'earlier'"
-            class="
-            font__size--c1
-            font__color--primary
-            font__weight--medium
-            ">
-            {{'Earlier'}}
-        </li>
+        @for (item of filtersOptions(); track $index) {
+            <li (click)="selectFilter(item.value)"
+                [class.selected]="filterBy() === item.value"
+                class="
+                font__size--c1
+                font__color--primary
+                font__weight--medium
+                ">
+                {{ item.label }}
+            </li>
+        }
     </ul>
 
 </section>

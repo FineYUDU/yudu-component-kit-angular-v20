@@ -1,6 +1,6 @@
 import { Component, input, output, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { NavMenu, Notifications, SettingsMenu } from '../../interfaces';
+import { NavMenu, Notifications, DropdownMenu, NotificationsFilter } from '../../interfaces';
 
 import { YdIcon } from '../yd-icon/yd-icon';
 import { YdInput } from '../yd-input/yd-input';
@@ -23,16 +23,35 @@ import { YdUserDropdowMenu } from "./yd-user-dropdow-menu/yd-user-dropdow-menu";
 })
 export class YdNavbar {
   public signOutEmit = output<void>();
-
-  public companyLogo = input.required<string>();
-  public navMenu = input.required<NavMenu[]>();
-  public profileImg = input.required<string>();
-  public settingsMenu = input.required<SettingsMenu[]>();
-  public subTitle = input.required<string>();
-  public title = input.required<string>();
-
+  
   public companyLogoRoute = input<string>('');
   public notifications = input<Notifications[]>([]);
+  public signOutTitle = input<string>('sign out');
+  public placeholder = input<string>('search');
+  public notificationsTitle = input<string>('Notifications');
+  public filtersOptions = input<NotificationsFilter[]>([
+    {
+      label:'all',
+      value:'all',
+    },
+    {
+      label:'this week',
+      value:'week',
+    },
+    {
+      label:'earlier',
+      value:'earlier',
+    },
+  ]);
+
+  public companyLogo = input.required<string>();
+  public subTitle = input.required<string>();
+  public headerMenu = input<NavMenu[]>();
+  public profileImg = input.required<string>();
+  public userMenu = input.required<DropdownMenu[]>();
+  public title = input.required<string>();
+  public themeMenu = input.required<DropdownMenu[]>();
+  public langMenu = input.required<DropdownMenu[]>();
 
   public notificationsDropdownIsOpen = signal<boolean>(false);
   public settingsDropdownIsOpen = signal<boolean>(false);
@@ -58,6 +77,5 @@ export class YdNavbar {
     this.notificationsDropdownIsOpen.set(!this.notificationsDropdownIsOpen());
     this.settingsDropdownIsOpen.set(false);
   };
-
 
 }

@@ -1,4 +1,3 @@
-
 .yd-notifications {
     display: flex;
     flex-direction: column;
@@ -8,14 +7,13 @@
     position: absolute;
     top:calc(100% + var(--spacing-sm));
     right: 0;
-    width: 16rem;
     overflow: hidden;
     clip-path: polygon(100% 0, 100% 0, 100% 0, 100% 0);
     padding: var(--spacing-xs);
     border-radius: var(--radius-minimal);
     transition: clip-path, ease-in-out, .3s;
     pointer-events: none;
-    width: 20rem;
+    min-width: 25rem;
     
     &.open {
         clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);

@@ -1,11 +1,12 @@
-import { Component, computed, signal} from '@angular/core';
+import { Component, computed, inject, signal} from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
-import { SettingsMenu } from '../../interfaces/yd-user-dropdown-menu.interfaces';
+import { DropdownMenu } from '../../interfaces/yd-user-dropdown-menu.interfaces';
 import { NavMenu } from '../../interfaces/yd-navbar.interfaces';
 
 import { YdNavbar } from '../../components/yd-navbar/yd-navbar';
-import { Notifications } from '../../interfaces/yd-notifications.interfaces';
+import { Notifications, NotificationsFilter } from '../../interfaces/yd-notifications.interfaces';
+import { Theme } from 'yudu-component-kit';
 
 
 @Component({
@@ -13,40 +14,46 @@ import { Notifications } from '../../interfaces/yd-notifications.interfaces';
   imports: [
     YdNavbar,
     RouterOutlet,
-],
+  ],
   templateUrl: './main.html',
   styleUrl: './main.css',
 })
 export default class Main {
   public companyLogo = signal<string>('../../../assets/logo.svg')
+  public theme = inject( Theme );
   
-  public navMenu = computed<NavMenu[]>(() => [
+  public headerMenu = computed<NavMenu[]>(() => [
     {
-      label:'Home',
+      label:'route.home',
+      value:'home',
       route:'home',
       icon:'home',
     },
     {
-      label:'About',
+      label:'route.about',
+      value:'about',
       route:'',
       icon:'angle-double-up',
     },
     {
-      label:'Services',
+      label:'route.services',
+      value:'services',
       route:'',
       icon:'server',
     },
   ]);
 
-  public settingsMenu = computed<SettingsMenu[]>( ()=> [
+  public userMenu = computed<DropdownMenu[]>( ()=> [
     {
+      value:'profile',
+      label:'user-menu.profile',
       icon:'user',
-      label:'Profile',
       route:'profile',
     },
     {
+      value:'settings',
+      label:'user-menu.settings',
       icon:'cog',
-      label:'Settings',
       route:'settings',
     },
   ]);
@@ -78,6 +85,65 @@ export default class Main {
     },
   ]);
 
+  public langMenu = computed<DropdownMenu[]>(() => [
+    {
+      label: 'lang.lang',
+      value: 'translate',
+      icon: 'language',
+      subMenu: [
+        {
+          value: 'es',
+          label: 'lang.es',
+          function: () => {
+            console.log('Traducir al ES');
+          },
+        },
+        {
+          value: 'en',
+          label: 'lang.en',
+          function: () => {
+            console.log('Traducir al EN');
+          }
+        },
+      ],
+    },
+  ]);
+
+  public themeMenu = computed<DropdownMenu[]>(() => [
+    {
+      label: 'theme.theme',
+      value: 'theme',
+      icon: 'palette',
+      subMenu: [
+        {
+          value: 'dark',
+          label: 'theme.dark',
+          function: () => this.theme.changeTheme('dark'),
+        },
+        {
+          value: 'light',
+          label: 'theme.light',
+          function: () => this.theme.changeTheme('light'),
+        },
+      ],
+    },
+  ]);
+
+  public filtersOptions = signal<NotificationsFilter[]>([
+    {
+      label:'notifications.filter.all',
+      value:'all',
+    },
+    {
+      label:'notifications.filter.week',
+      value:'week',
+    },
+    {
+      label:'notifications.filter.earlier',
+      value:'earlier',
+    },
+  ]);
+  
   public signOut():void {
     console.log('User Logou');
   };

@@ -1,9 +1,10 @@
-import { Component, input, output } from '@angular/core';
+import { Component, inject, input, output, signal } from '@angular/core';
 import { RouterLink } from "@angular/router";
 
-import { SettingsMenu } from '../../../interfaces';
+import { DropdownMenu } from '../../../interfaces';
 
 import { YdIcon } from '../../yd-icon/yd-icon';
+import { Theme } from '../../../core/services/theme';
 
 @Component({
   selector: 'yd-user-dropdow-menu',
@@ -16,23 +17,37 @@ import { YdIcon } from '../../yd-icon/yd-icon';
   }
 })
 export class YdUserDropdowMenu {
+  public theme = inject( Theme );
+
   public signOutEmit = output<void>();
   public toggleEmit = output<boolean>();
 
+  public signOutTitle = input.required<string>();
   public dropdownIsOpen = input.required<boolean>();
-  public settingsMenu = input.required<SettingsMenu[]>();
+  public userMenu = input.required<DropdownMenu[]>();
   public subTitle = input.required<string>();
   public title = input.required<string>();
-
+  public themeMenu = input.required<DropdownMenu[]>();
+  public langMenu = input.required<DropdownMenu[]>();
+  
   public profileImg = input<string>('');
+
+  public openToggleKey = signal<string | null>(null);
   
   public signOut():void {
     this.signOutEmit.emit();
   };
 
-
   public toggleDropdow( event:boolean ):void {
     this.toggleEmit.emit( this.dropdownIsOpen() );
   };
+
+  public toggleSubMenu(key: string): void {
+    this.openToggleKey.update(curr => (curr === key ? null : key));
+  }
+
+  public isSubMenuOpen(key: string): boolean {
+    return this.openToggleKey() === key;
+  }
 
 }
