@@ -1,6 +1,7 @@
 <main>
     <yd-navbar
         (signOutEmit)="signOut()"
+        [headerMenu]="headerMenu()"
         [companyLogo]="companyLogo()"
         [notifications]="notifications()"
         [profileImg]="companyLogo()"
@@ -10,9 +11,9 @@
         [themeMenu]="themeMenu()"
         [langMenu]="langMenu()"
         [filtersOptions]="filtersOptions()"
-        notificationsTitle="notifications.title"
-        signOutTitle="signout"
-        placeholder="input.search"
+        [notificationsTitle]="translation.translate('notifications.title')"
+        [signOutTitle]="translation.translate('signout')"
+        [placeholder]="translation.translate('input.search')"
     />
     <router-outlet/>
 

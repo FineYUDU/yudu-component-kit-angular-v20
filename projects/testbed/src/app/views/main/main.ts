@@ -6,7 +6,10 @@ import { NavMenu } from '../../interfaces/yd-navbar.interfaces';
 
 import { YdNavbar } from '../../components/yd-navbar/yd-navbar';
 import { Notifications, NotificationsFilter } from '../../interfaces/yd-notifications.interfaces';
+
 import { Theme } from 'yudu-component-kit';
+
+import { I18nService } from 'yudu-component-kit/i18n';
 
 
 @Component({
@@ -19,24 +22,26 @@ import { Theme } from 'yudu-component-kit';
   styleUrl: './main.css',
 })
 export default class Main {
-  public companyLogo = signal<string>('../../../assets/logo.svg')
   public theme = inject( Theme );
+  public translation = inject( I18nService );
+
+  public companyLogo = signal<string>('../../../assets/logo.svg')
   
   public headerMenu = computed<NavMenu[]>(() => [
     {
-      label:'route.home',
+      label:this.translation.translate('route.home'),
       value:'home',
       route:'home',
       icon:'home',
     },
     {
-      label:'route.about',
+      label:this.translation.translate('route.about'),
       value:'about',
       route:'',
       icon:'angle-double-up',
     },
     {
-      label:'route.services',
+      label:this.translation.translate('route.services'),
       value:'services',
       route:'',
       icon:'server',
@@ -46,19 +51,19 @@ export default class Main {
   public userMenu = computed<DropdownMenu[]>( ()=> [
     {
       value:'profile',
-      label:'user-menu.profile',
+      label:this.translation.translate('user-menu.profile'),
       icon:'user',
       route:'profile',
     },
     {
       value:'settings',
-      label:'user-menu.settings',
+      label:this.translation.translate('user-menu.settings'),
       icon:'cog',
       route:'settings',
     },
   ]);
 
-  public notifications = signal<Notifications[]>([
+  public notifications = computed<Notifications[]>(()=>[
     {
       icon:'lightbulb',
       date:new Date(),
@@ -87,22 +92,22 @@ export default class Main {
 
   public langMenu = computed<DropdownMenu[]>(() => [
     {
-      label: 'lang.lang',
+      label:this.translation.translate('lang.lang'),
       value: 'translate',
       icon: 'language',
       subMenu: [
         {
           value: 'es',
-          label: 'lang.es',
+          label:this.translation.translate('lang.es'),
           function: () => {
-            console.log('Traducir al ES');
+            this.translation.setLang('es')
           },
         },
         {
           value: 'en',
-          label: 'lang.en',
+          label:this.translation.translate('lang.en'),
           function: () => {
-            console.log('Traducir al EN');
+            this.translation.setLang('en')
           }
         },
       ],
@@ -111,35 +116,35 @@ export default class Main {
 
   public themeMenu = computed<DropdownMenu[]>(() => [
     {
-      label: 'theme.theme',
+      label: this.translation.translate('theme.theme'),
       value: 'theme',
       icon: 'palette',
       subMenu: [
         {
           value: 'dark',
-          label: 'theme.dark',
+          label: this.translation.translate('theme.dark'),
           function: () => this.theme.changeTheme('dark'),
         },
         {
           value: 'light',
-          label: 'theme.light',
+          label: this.translation.translate('theme.light'),
           function: () => this.theme.changeTheme('light'),
         },
       ],
     },
   ]);
 
-  public filtersOptions = signal<NotificationsFilter[]>([
+  public filtersOptions = computed<NotificationsFilter[]>( () => [
     {
-      label:'notifications.filter.all',
+      label:this.translation.translate('notifications.filter.all'),
       value:'all',
     },
     {
-      label:'notifications.filter.week',
+      label:this.translation.translate('notifications.filter.week'),
       value:'week',
     },
     {
-      label:'notifications.filter.earlier',
+      label:this.translation.translate('notifications.filter.earlier'),
       value:'earlier',
     },
   ]);
