@@ -23,9 +23,9 @@
     "notifications":{
         "title":"Notifications",
         "filter":{
-            "all":"all",
-            "week":"this week",
-            "earlier":"ultimos"
+            "all":"Todas",
+            "week":"Esta semana",
+            "earlier":"earlier"
         }
     },
     "input": {

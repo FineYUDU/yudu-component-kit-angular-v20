@@ -5,6 +5,7 @@ import { DropdownMenu } from '../../../interfaces';
 
 import { YdIcon } from '../../yd-icon/yd-icon';
 import { Theme } from '../../../core/services/theme';
+import { I18nService } from '../../../../../i18n/src/lib/i18n';
 
 @Component({
   selector: 'yd-user-dropdow-menu',
@@ -18,6 +19,7 @@ import { Theme } from '../../../core/services/theme';
 })
 export class YdUserDropdowMenu {
   public theme = inject( Theme );
+  public translation = inject( I18nService );
 
   public signOutEmit = output<void>();
   public toggleEmit = output<boolean>();

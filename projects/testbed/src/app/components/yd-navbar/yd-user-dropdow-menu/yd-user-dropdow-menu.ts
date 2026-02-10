@@ -4,6 +4,7 @@ import { Theme, YdIcon } from "yudu-component-kit";
 import { RouterLink } from "@angular/router";
 
 import { DropdownMenu } from '../../../interfaces/yd-user-dropdown-menu.interfaces';
+import { I18nService } from 'yudu-component-kit/i18n';
 
 @Component({
   selector: 'yd-user-dropdow-menu',
@@ -17,6 +18,7 @@ import { DropdownMenu } from '../../../interfaces/yd-user-dropdown-menu.interfac
 })
 export class YdUserDropdowMenu {
   public theme = inject( Theme );
+  public translation = inject( I18nService );
 
   public signOutEmit = output<void>();
   public toggleEmit = output<boolean>();

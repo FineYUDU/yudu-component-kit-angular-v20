@@ -90,7 +90,7 @@
                             <ul class="sub-menu-list">
                                 @for (sub of item.subMenu; track $index) {
                                     <li 
-                                        [class.selected]="this.theme.GetTheme === sub.value" 
+                                        [class.selected]="translation.lang() === sub.value " 
                                         (click)="sub.function!()">
                                         {{sub.label}}
                                     </li>
