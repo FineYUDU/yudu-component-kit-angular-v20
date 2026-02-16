@@ -28,8 +28,8 @@ export class YdUserDropdowMenu {
   public userMenu = input.required<DropdownMenu[]>();
   public subTitle = input.required<string>();
   public title = input.required<string>();
-  public themeMenu = input.required<DropdownMenu[]>();
-  public langMenu = input.required<DropdownMenu[]>();
+  public themeMenu = input<DropdownMenu[]>();
+  public langMenu = input<DropdownMenu[]>();
   
   public profileImg = input<string>('');
 

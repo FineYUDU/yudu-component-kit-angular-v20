@@ -1,37 +1,32 @@
 <nav>
-    <div class="bars__container">
-        <yd-icon
-            name="bars"
-        />
-    </div>
-    <!-- <a [routerLink]="companyLogoRoute()">
-        <img 
-            [src]="companyLogo()"
-            width="30"
-            height="30"
-            alt="company-logo"
-        >
-    </a> -->
+    <section class="left-block">
+        <div class="bars__container">
+            <yd-icon
+                name="bars"
+            />
+        </div>
+        @if (companyLogoRoute()) {
+            <a [routerLink]="companyLogoRoute()" class="company-logo route-active">
+                <img 
+                    [src]="companyLogo()"
+                    width="35"
+                    height="35"
+                    alt="company-logo"
+                >
+            </a>
+        }
+        @else {
+            <span class="company-logo">
+                <img 
+                    [src]="companyLogo()"
+                    width="35"
+                    height="35"
+                    alt="company-logo"
+                >
+            </span>
+        }
+    </section>
     <section class="right-block">
-        <ul class="navbar-menu-list">
-            @for (item of headerMenu(); track $index) {
-                <li>
-                    <a [routerLink]="item.route">
-                        <yd-icon
-                            [name]="item.icon"
-                        />
-                        <span class="
-                            font__size--c1
-                            font__weight--medium
-                            font__color--primary
-                            ">
-                            {{ item.label }}
-                        </span>
-                    </a>
-                </li>
-            }
-        </ul>
-
         <div class="semisection__container">
             <div class="search__container">
                 <yd-input 
@@ -68,17 +63,39 @@
                         (toggleEmit)="handleToggleSettingsEmmit($event)"
                         [dropdownIsOpen]="settingsDropdownIsOpen()"
                         [langMenu]="langMenu()"
+                        [themeMenu]="themeMenu()"
                         [profileImg]="profileImg()"
                         [signOutTitle]="signOutTitle()"
                         [subTitle]="subTitle()"
-                        [themeMenu]="themeMenu()"
                         [title]="title()"
                         [userMenu]="userMenu()"
                     />
                 </div>
             </div>
         </div>
-
     </section>
 </nav>
+
+<yd-left-sidebar/>
+
+<!-- <div class="sidebar">
+    <ul class="navbar-menu-list">
+            @for (item of headerMenu(); track $index) {
+                <li>
+                    <a [routerLink]="item.route">
+                        <yd-icon
+                            [name]="item.icon"
+                        />
+                        <span class="
+                            font__size--c1
+                            font__weight--medium
+                            font__color--primary
+                            ">
+                            {{ item.label }}
+                        </span>
+                    </a>
+                </li>
+            }
+        </ul>
+</div> -->
 

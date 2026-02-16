@@ -9,6 +9,7 @@ import { DropdownMenu } from '../../interfaces/yd-user-dropdown-menu.interfaces'
 
 import { YdUserDropdowMenu } from "./yd-user-dropdow-menu/yd-user-dropdow-menu";
 import { YdNotifications } from "./yd-notifications/yd-notifications";
+import { YdLeftSidebar } from "./yd-left-sidebar/yd-left-sidebar";
 
 @Component({
   selector: 'yd-navbar',
@@ -17,7 +18,8 @@ import { YdNotifications } from "./yd-notifications/yd-notifications";
     YdIcon,
     YdInput,
     YdUserDropdowMenu,
-    YdNotifications
+    YdNotifications,
+    YdLeftSidebar
 ],
   templateUrl: './yd-navbar.html',
   host: {
@@ -53,8 +55,8 @@ export class YdNavbar {
   public profileImg = input.required<string>();
   public userMenu = input.required<DropdownMenu[]>();
   public title = input.required<string>();
-  public themeMenu = input.required<DropdownMenu[]>();
-  public langMenu = input.required<DropdownMenu[]>();
+  public themeMenu = input<DropdownMenu[]>();
+  public langMenu = input<DropdownMenu[]>();
 
   public notificationsDropdownIsOpen = signal<boolean>(false);
   public settingsDropdownIsOpen = signal<boolean>(false);

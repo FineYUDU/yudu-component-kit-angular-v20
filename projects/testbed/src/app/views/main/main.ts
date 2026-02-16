@@ -26,6 +26,8 @@ export default class Main {
   public translation = inject( I18nService );
 
   public companyLogo = signal<string>('../../../assets/logo.svg')
+  public profileImg = signal<string>('../../../assets/profile-pic.jpg')
+
   
   public headerMenu = computed<NavMenu[]>(() => [
     {

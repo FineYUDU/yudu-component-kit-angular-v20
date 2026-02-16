@@ -16,23 +16,43 @@
         padding: var(--spacing-xs) var(--spacing-sm);
         width: 100%;
 
-        .bars__container {
-            position: relative;
+        .left-block {
             display: flex;
+            gap: var(--spacing-xs);
             align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            width: 2.1875rem;
-            height: 2.1875rem;
-            border-radius: var(--radius-full);
-            border: var(--border-xs) solid var(--yd-color-border-primary);
 
-            &:hover { 
-                background-color: var(--yd-color-surface-quaternary); 
+            .bars__container {
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                width: 2.1875rem;
+                height: 2.1875rem;
+                border-radius: var(--radius-full);
+                border: var(--border-xs) solid var(--yd-color-border-primary);
+                
+                &:hover { 
+                    background-color: var(--yd-color-surface-quaternary); 
+                }
+                
+                &:active { 
+                    background-color: var(--yd-color-surface-primary); 
+                }
             }
+            
+            .company-logo {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 2.1875rem;
+                height: 2.1875rem;
+                overflow: hidden;
+                border-radius:var(--radius-full);
 
-            &:active { 
-                background-color: var(--yd-color-surface-primary); 
+                &.route-active {
+                    cursor: pointer;
+                }
             }
         }
 
@@ -277,7 +297,7 @@
     border-radius: var(--radius-minimal);
     transition: clip-path, ease-in-out, .3s;
     pointer-events: none;
-    min-width: 25rem;
+    min-width: 20rem;
     
     &.open {
         clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
@@ -346,4 +366,65 @@
     .hr {
         border-top: var(--border-xs) solid var(--yd-color-border-tertiary);
     }
+}
+
+
+.yd-left-sidebar__container {
+    position:fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background-color: var(--yd-color-surface-secondary);
+    width: 20rem;
+    border-top: var(--border-xs) solid var(--yd-color-border-secondary);
+    border-right: var(--border-xs) solid var(--yd-color-border-secondary);
+    border-bottom: var(--border-xs) solid var(--yd-color-border-secondary);
+    border-top-right-radius: var(--radius-minimal);
+    border-bottom-right-radius: var(--radius-minimal);
+    padding: var(--spacing-sm);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-blocks);
+    
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        
+        .logo-img {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 2.5rem;
+            height: 2.5rem;
+
+            overflow: hidden;
+            border-radius: var(--radius-minimal);
+        }
+    }
+}
+
+/* XSm Breakpoint */
+@media (max-width: 576px) {
+
+    .search__container {
+        display: none !important;
+    }
+
+}
+
+/* SM Breakpoint */
+@media (min-width: 576px) and (max-width:768px) {
+
+
+}
+
+/* MD Breakpoint */
+@media (min-width: 768px) and (max-width:992px) {
+
+}
+
+/* LG Breakpoint */
+@media (min-width: 992px) and (max-width:1200px) {
+
 }
