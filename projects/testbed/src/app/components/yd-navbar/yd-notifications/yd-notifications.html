@@ -1,0 +1,73 @@
+<p class="
+    font__size--b1
+    font__color--primary
+    font__weight--medium
+    ">
+    {{ notificationsTitle() }}
+    
+</p>
+<section>
+
+    <ul class="filter-menu">
+        @for (item of filtersOptions(); track $index) {
+            <li (click)="selectFilter(item.value)"
+                [class.selected]="filterBy() === item.value"
+                class="
+                font__size--c1
+                font__color--primary
+                font__weight--medium
+                ">
+                {{ item.label }}
+            </li>
+        }
+    </ul>
+
+</section>
+
+<section>
+    <ul class="notifications-list">
+        @for (item of notifications();
+            track $index;
+            let last = $last;
+            ) {
+            <li class="p-top">
+                <a>
+                    <div class="icon-notification__container">
+                        <yd-icon
+                            [name]="'lightbulb'"
+                        />
+                    </div>
+                    <div class="message__container">
+                        <span class="
+                            font__size--c1
+                            font__color--primary
+                            font__weight--medium
+                            ">
+                            {{item.title}}
+                        </span>
+                        <span class="
+                            font__size--c1
+                            font__color--secondary
+                            font__weight--medium
+                            ">
+                            {{item.message}}
+                        </span>
+                    </div>
+                    <span class="
+                        hour
+                        font__size--c1
+                        font__color--secondary
+                        font__weight--medium
+                        ">
+                        <!-- {{ item.date}} -->
+                          {{'1 hour'}}
+                    </span>
+                </a>
+            </li>
+            
+            @if(!last) {
+                <div class="hr"></div>
+            }
+        }
+    </ul>
+</section>

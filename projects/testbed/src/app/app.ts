@@ -2,10 +2,10 @@ import { Component, inject } from '@angular/core';
 
 import { LocalStorageStore } from 'yudu-component-kit';
 
-import { Main } from "./views/main/main";
+import { RouterOutlet } from '@angular/router';
 @Component({
   selector: 'app-root',
-  imports: [Main],
+  imports: [ RouterOutlet],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

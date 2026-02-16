@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { YdInput } from './yd-input';
+import { YdLeftSidebar } from './yd-left-sidebar';
 
-describe('YdInput', () => {
-  let component: YdInput;
-  let fixture: ComponentFixture<YdInput>;
+describe('YdLeftSidebar', () => {
+  let component: YdLeftSidebar;
+  let fixture: ComponentFixture<YdLeftSidebar>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [YdInput]
+      imports: [YdLeftSidebar]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(YdInput);
+    fixture = TestBed.createComponent(YdLeftSidebar);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

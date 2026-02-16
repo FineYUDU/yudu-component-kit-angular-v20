@@ -1,0 +1,34 @@
+{
+    "lang": {
+        "lang":"lenguaje",
+        "current":"english",
+        "es":"spanish",
+        "en":"english"
+    },
+    "theme":{
+        "theme":"theme",
+        "dark":"dark",
+        "light":"light"
+    },
+    "route":{
+        "home":"home",
+        "about":"about",
+        "services":"services"
+    },
+    "user-menu":{
+        "profile":"profile",
+        "settings":"settings"
+    },
+    "signout":"sign out",
+    "notifications":{
+        "title":"Notificaciones",
+        "filter":{
+            "all":"all",
+            "week":"this week",
+            "earlier":"ultimos"
+        }
+    },
+    "input": {
+        "search":"search"
+    }
+}

@@ -1,0 +1,35 @@
+{
+    "lang":{
+        "lang":"language",
+        "current":"español",
+        "es":"español",
+        "en":"inglés"
+    },
+    "theme":{
+        "theme":"tema",
+        "dark":"oscuro",
+        "light":"claro"
+    },
+    "route":{
+        "home":"inicio",
+        "about":"acerca de",
+        "services":"servicios"
+    },
+    "user-menu":{
+        "profile":"perfil",
+        "settings":"configuraciones"
+    },
+    "signout":"salir",
+    "notifications":{
+        "title":"Notifications",
+        "filter":{
+            "all":"Todas",
+            "week":"Esta semana",
+            "earlier":"earlier"
+        }
+    },
+    "input": {
+        "search":"buscar"
+    }
+    
+}

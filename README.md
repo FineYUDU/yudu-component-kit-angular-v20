@@ -11,6 +11,7 @@
 
 ![last update](https://img.shields.io/github/last-commit/FineYUDU/yudu-component-kit?label=last%20update)
 
+
 ## ⚠️ **This library is currently under construction.**
 - Some features, components, and styles may change in future versions.
 
@@ -21,6 +22,7 @@
 - [Components list](#components-list)
 - [Status](#status)
 - [Quick start](#quick-start)
+- [i18n](#i18n)
 
 ## Features
 - ⚡ Built for Angular **v20+**
@@ -34,7 +36,7 @@
 - Chip ✅
 - Icons ✅
 - Input ✅
-- Header 👷🏾
+- Navbar 👷🏾
 - Footer 👷🏾
 - Sidebar 👷🏾
 
@@ -98,6 +100,116 @@ YuduComponentKit ships a design-system stylesheet with tokens (CSS variables), b
   }
 }
 ```
+
+## i18n
+
+YuduComponentKit includes an optional **i18n** entry point that provides a lightweight translation service based on JSON files stored in your app’s `assets` folder.
+
+### Install
+If you already installed the library, you’re done:
+```bash
+npm i yudu-component-kit
+```
+
+### Setup
+
+1) **Enable HttpClient** (required to load JSON files)
+```ts
+// app.config.ts
+import { provideHttpClient } from '@angular/common/http';
+
+export const appConfig = {
+  providers: [provideHttpClient()],
+};
+```
+
+2) **Provide i18n configuration**
+```ts
+// app.config.ts
+import { provideHttpClient } from '@angular/common/http';
+import { provideYuduI18n } from 'yudu-component-kit/i18n';
+
+export const appConfig = {
+  providers: [
+    provideHttpClient(),
+    ...provideYuduI18n({
+      assetPath: '/assets/lang',
+      storageKey: 'lang',
+      defaultLang: 'en',
+      supportedLangs: ['en', 'es'], // add as many as you want
+    }),
+  ],
+};
+```
+
+3) **Create translation files inside your app**
+Create these files:
+- `src/assets/lang/en.json`
+- `src/assets/lang/es.json`
+
+Example:
+
+`src/assets/lang/en.json`
+```json
+{
+  "home": {
+    "title": "Hello"
+  },
+  "error": {
+    "unknown": "Connection error. Please try again later."
+  }
+}
+```
+
+`src/assets/lang/es.json`
+```json
+{
+  "home": {
+    "title": "Hola"
+  },
+  "error": {
+    "unknown": "Error de conexión. Intenta más tarde."
+  }
+}
+```
+
+### Usage
+
+Inject the service and translate using dot-notation keys:
+
+```ts
+import { Component, inject } from '@angular/core';
+import { I18nService } from 'yudu-component-kit/i18n';
+
+@Component({
+  selector: 'app-root',
+  template: `
+    <h1>{{ t.translate('home.title') }}</h1>
+    <button (click)="t.changeLang()">Toggle language</button>
+  `,
+})
+export class AppComponent {
+  t = inject(I18nService);
+}
+```
+
+### How it works
+- The current language is persisted in `localStorage` using the configured `storageKey` (default: `lang`).
+- Translation files are loaded from: `${assetPath}/${lang}.json` (default: `/assets/lang/{lang}.json`).
+- Loaded dictionaries are cached in memory to avoid re-downloading.
+- If a key doesn’t exist, `translate()` returns the key itself (useful to detect missing translations).
+
+### Adding more languages
+1) Add the new language JSON file in your app, for example:
+- `src/assets/lang/fr.json`
+
+2) Add it to `supportedLangs`:
+```ts
+...provideYuduI18n({
+  supportedLangs: ['en', 'es', 'fr']
+})
+```
+
 ---
 <p align="center">
   Made with ❤️ by "Fine Yudu" 2025<br/>

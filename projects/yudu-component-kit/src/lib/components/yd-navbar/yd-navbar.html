@@ -1,0 +1,84 @@
+<nav>
+    <div class="bars__container">
+        <yd-icon
+            name="bars"
+        />
+    </div>
+    <!-- <a [routerLink]="companyLogoRoute()">
+        <img 
+            [src]="companyLogo()"
+            width="30"
+            height="30"
+            alt="company-logo"
+        >
+    </a> -->
+    <section class="right-block">
+        <ul class="navbar-menu-list">
+            @for (item of headerMenu(); track $index) {
+                <li>
+                    <a [routerLink]="item.route">
+                        <yd-icon
+                            [name]="item.icon"
+                        />
+                        <span class="
+                            font__size--c1
+                            font__weight--medium
+                            font__color--primary
+                            ">
+                            {{ item.label }}
+                        </span>
+                    </a>
+                </li>
+            }
+        </ul>
+
+        <div class="semisection__container">
+            <div class="search__container">
+                <yd-input 
+                    icon="search"
+                    [placeholder]="placeholder()"
+                />
+            </div>
+            <div class="buttons__container">
+                <div class="notifications__container">
+                    <yd-icon
+                        class="icon-notifications"
+                        name="bell"
+                        size="large"
+                        (click)="toggleNotifications()"
+                    />
+                    <yd-notifications
+                        [notifications]="notifications()"
+                        [dropdownIsOpen]="notificationsDropdownIsOpen()"
+                        [notificationsTitle]="notificationsTitle()"
+                        [filtersOptions]="filtersOptions()"
+                    />
+                </div>
+    
+                <div class="user__container">
+                    <img 
+                        [src]="profileImg()"
+                        width="35"
+                        height="35"
+                        alt="company-logo"
+                        (click)="toggleSettings()"
+                        >
+                    <yd-user-dropdow-menu
+                        (signOutEmit)="handleSignOut()"
+                        (toggleEmit)="handleToggleSettingsEmmit($event)"
+                        [dropdownIsOpen]="settingsDropdownIsOpen()"
+                        [langMenu]="langMenu()"
+                        [profileImg]="profileImg()"
+                        [signOutTitle]="signOutTitle()"
+                        [subTitle]="subTitle()"
+                        [themeMenu]="themeMenu()"
+                        [title]="title()"
+                        [userMenu]="userMenu()"
+                    />
+                </div>
+            </div>
+        </div>
+
+    </section>
+</nav>
+
