@@ -34,7 +34,7 @@
     "@angular/router": "^21.2.13",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
-    "yudu-component-kit": "^1.0.3"
+    "yudu-component-kit": "^1.2.1"
   },
   "devDependencies": {
     "@angular/build": "^21.2.11",
