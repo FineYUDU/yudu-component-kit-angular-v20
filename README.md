@@ -3,6 +3,7 @@
     src="./projects/yudu-component-kit/assets/logo.svg"
     alt="Logo Fine Dev"
     width="250"
+    
   />
 </p>
 <h1 align="center">
