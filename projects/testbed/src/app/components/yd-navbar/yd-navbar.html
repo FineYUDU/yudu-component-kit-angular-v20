@@ -29,13 +29,12 @@
     <section class="right-block">
         <div class="semisection__container">
             <div class="search__container">
-                <yd-input 
-                    icon="search"
-                    [placeholder]="placeholder()"
+                <yd-input-search
+                    (emitQuery)="handleEmitSearch($event)"
                 />
             </div>
             <div class="buttons__container">
-                <div class="notifications__container">
+                <!-- <div class="notifications__container">
                     <yd-icon
                         class="icon-notifications"
                         name="bell"
@@ -48,7 +47,7 @@
                         [notificationsTitle]="notificationsTitle()"
                         [filtersOptions]="filtersOptions()"
                     />
-                </div>
+                </div> -->
     
                 <div class="user__container">
                     <img 
@@ -76,7 +75,7 @@
     </section>
 </nav>
 
-<yd-left-sidebar/>
+<!-- <yd-left-sidebar/> -->
 
 <!-- <div class="sidebar">
     <ul class="navbar-menu-list">

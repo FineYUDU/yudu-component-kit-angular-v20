@@ -28,6 +28,9 @@ export default class Main {
   public companyLogo = signal<string>('../../../assets/logo.svg')
   public profileImg = signal<string>('../../../assets/profile-pic.jpg')
 
+  public hanldeSearchEmit(event:string):void {
+    console.log('Emit:', event)
+  };
   
   public headerMenu = computed<NavMenu[]>(() => [
     {

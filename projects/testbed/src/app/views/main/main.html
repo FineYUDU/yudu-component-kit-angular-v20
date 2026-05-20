@@ -1,14 +1,13 @@
 <main>
     <yd-navbar
+        (searchEmit)="hanldeSearchEmit($event)"
         (signOutEmit)="signOut()"
         [headerMenu]="headerMenu()"
         [companyLogo]="companyLogo()"
-        [notifications]="notifications()"
         [profileImg]="profileImg()"
         [userMenu]="userMenu()"
         [subTitle]="'Erick Alcocer'"
         [title]="'admin'"
-        [filtersOptions]="filtersOptions()"
         [notificationsTitle]="translation.translate('notifications.title')"
         [signOutTitle]="translation.translate('signout')"
         [placeholder]="translation.translate('input.search')"

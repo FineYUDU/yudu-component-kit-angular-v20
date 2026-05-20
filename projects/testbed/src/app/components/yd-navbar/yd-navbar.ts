@@ -1,25 +1,25 @@
 import { Component, input, output, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 // TODO: Replaced
-import { YdIcon, YdInput } from 'yudu-component-kit';
+import { YdIcon } from 'yudu-component-kit';
 
 import { NavMenu } from '../../interfaces/yd-navbar.interfaces';
-import { Notifications, NotificationsFilter } from '../../interfaces/yd-notifications.interfaces';
 import { DropdownMenu } from '../../interfaces/yd-user-dropdown-menu.interfaces';
 
 import { YdUserDropdowMenu } from "./yd-user-dropdow-menu/yd-user-dropdow-menu";
 import { YdNotifications } from "./yd-notifications/yd-notifications";
-import { YdLeftSidebar } from "./yd-left-sidebar/yd-left-sidebar";
+import { YdInputSearch } from "./yd-input-search/yd-input-search";
+
+// import { Notifications, NotificationsFilter } from '../../interfaces/yd-notifications.interfaces';
+// import { YdLeftSidebar } from "./yd-left-sidebar/yd-left-sidebar";
 
 @Component({
   selector: 'yd-navbar',
   imports: [
     RouterLink,
     YdIcon,
-    YdInput,
     YdUserDropdowMenu,
-    YdNotifications,
-    YdLeftSidebar
+    YdInputSearch
 ],
   templateUrl: './yd-navbar.html',
   host: {
@@ -28,26 +28,28 @@ import { YdLeftSidebar } from "./yd-left-sidebar/yd-left-sidebar";
 })
 export class YdNavbar {
   public signOutEmit = output<void>();
+  public searchEmit = output<string>();
   
   public companyLogoRoute = input<string>('');
-  public notifications = input<Notifications[]>([]);
   public signOutTitle = input<string>('sign out');
   public placeholder = input<string>('search');
   public notificationsTitle = input<string>('Notifications');
-  public filtersOptions = input<NotificationsFilter[]>([
-    {
-      label:'all',
-      value:'all',
-    },
-    {
-      label:'this week',
-      value:'week',
-    },
-    {
-      label:'earlier',
-      value:'earlier',
-    },
-  ]);
+
+  // public notifications = input<Notifications[]>([]);
+  // public filtersOptions = input<NotificationsFilter[]>([
+  //   {
+  //     label:'all',
+  //     value:'all',
+  //   },
+  //   {
+  //     label:'this week',
+  //     value:'week',
+  //   },
+  //   {
+  //     label:'earlier',
+  //     value:'earlier',
+  //   },
+  // ]);
 
   public companyLogo = input.required<string>();
   public subTitle = input.required<string>();
@@ -60,6 +62,11 @@ export class YdNavbar {
 
   public notificationsDropdownIsOpen = signal<boolean>(false);
   public settingsDropdownIsOpen = signal<boolean>(false);
+
+
+  public handleEmitSearch(event:string):void {
+    this.searchEmit.emit(event);
+  }
 
   public handleSignOut():void {
     this.signOutEmit.emit();

@@ -1,0 +1,17 @@
+<div class="field__container">
+    <div class="field__icon">
+        <yd-icon 
+            [name]="icon() || 'envelope'"
+        />
+    </div>
+    
+    <input 
+        class="yd-input__body"
+        [placeholder]="placeholder()"
+        [class.has-icon]="icon()"
+        [class.w--100]="fullSize()"
+        type="text"
+        (keyup)="onSearch(txtSearch.value)"
+        #txtSearch
+    >
+</div>
