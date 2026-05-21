@@ -1,14 +1,14 @@
-import { Component, computed, inject, input, output, signal } from '@angular/core';
-
+import { Component, inject, input, output, signal } from '@angular/core';
+// TODO: Remover
 import { Theme, YdIcon } from "yudu-component-kit";
-import { RouterLink } from "@angular/router";
+import { RouterLink, RouterLinkActive } from "@angular/router";
 
-import { DropdownMenu } from '../../../interfaces/yd-user-dropdown-menu.interfaces';
 import { I18nService } from 'yudu-component-kit/i18n';
+import { DropdownMenu, NavMenu } from '../../../interfaces/yd-navbar.interfaces';
 
 @Component({
   selector: 'yd-user-dropdow-menu',
-  imports: [ YdIcon, RouterLink ],
+  imports: [YdIcon, RouterLink, RouterLinkActive],
   templateUrl: './yd-user-dropdow-menu.html',
   host:{
     'class':'yd-user-dropdown-menu',
@@ -25,13 +25,16 @@ export class YdUserDropdowMenu {
 
   public signOutTitle = input.required<string>();
   public dropdownIsOpen = input.required<boolean>();
-  public userMenu = input.required<DropdownMenu[]>();
-  public subTitle = input.required<string>();
-  public title = input.required<string>();
+  
+  public fullName = input<string>();
+  public username = input<string>();
+  
+  public userMenu = input<NavMenu[]>();
+  public profileMenu = input<NavMenu[]>();
   public themeMenu = input<DropdownMenu[]>();
   public langMenu = input<DropdownMenu[]>();
   
-  public profileImg = input<string>('');
+  public profileImg = input<string | null>();
 
   public openToggleKey = signal<string | null>(null);
   
@@ -41,6 +44,7 @@ export class YdUserDropdowMenu {
 
   public toggleDropdow( event:boolean ):void {
     this.toggleEmit.emit( this.dropdownIsOpen() );
+    this.openToggleKey.set(null);
   };
 
   public toggleSubMenu(key: string): void {

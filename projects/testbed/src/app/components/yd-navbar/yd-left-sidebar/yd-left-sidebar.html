@@ -1,21 +1,55 @@
-<section class="header">
-    <a class="logo-img">
-        <img 
-            src="../../../../assets/logo.svg" 
-            alt="company-logo"
-            width="40"
-            height="40"
-        >
-    </a>
-    <yd-icon
-        class="cursor-pointer"
-        name="times"
-    />
-</section>
+<div class="yd-left-sidebar__body" [class.close]="!isSidebarOpen()">
+    <section class="yd-left-sidebar__header">
+        <a class="logo-img">
+            <img 
+                src="../../../../assets/logo.svg" 
+                alt="company-logo"
+                width="40"
+                height="40"
+            >
+        </a>
+        <yd-icon
+            class="cursor-pointer"
+            name="times"
+            (click)="toggleSidebar( this.isSidebarOpen())"
+        />
+    </section>
+    
+    <section class="dropdown-menu__row">
+        <ul class="dropdown-menu-list">
+            @for( item of sidebarMenu(); track item.label) {
+                <li class="
+                    font__size--c1
+                    font__color--primary
+                    font__wigth--bold
+                    ">
+                    @if(item.route) {
+                        <a 
+                            [routerLink]="item.route"
+                            routerLinkActive="active" 
+                            (click)="toggleSidebar(this.isSidebarOpen())">
+                            <yd-icon 
+                                [color]="'var(--yd-color-text-secondary)'"
+                                [name]="item.icon"
+                            />
+                            {{ item.label }}
+                        </a>
+                    } @else {
+                        <a (click)="toggleSidebar(this.isSidebarOpen())">
+                            <yd-icon 
+                                [color]="'var(--yd-color-text-secondary)'"
+                                [name]="item.icon"
+                            />
+                            {{ item.label }}
+                        </a>
+                        
+                    }
+                </li>
+            }
+        </ul>
 
-<ul>
-    <li>yd-left-sidebar works!</li>
-    <li>yd-left-sidebar works!</li>
-    <li>yd-left-sidebar works!</li>
-    <li>yd-left-sidebar works!</li>
-</ul>
+    </section>
+    
+</div>
+
+<div class="yd-left-sidebar__bg"[class.close]="!isSidebarOpen()"></div>

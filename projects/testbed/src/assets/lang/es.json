@@ -19,7 +19,7 @@
         "profile":"perfil",
         "settings":"configuraciones"
     },
-    "signout":"salir",
+    "signout":"cerrar sesión",
     "notifications":{
         "title":"Notifications",
         "filter":{
